@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\UnrealProject\\Palworld_Base\\Source\\Palworld_Base\\Palworld_Base.Build.cs",
+		"C:\\UnrealProject\\Palworld_Base\\Source\\Palworld_Base.Target.cs",
+		"C:\\UnrealProject\\Palworld_Base\\Source\\Palworld_BaseEditor.Target.cs"
+	],
+	"EngineVersion": "5.4.4"
+}

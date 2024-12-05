@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Palworld_Base",
+			"Path": "..\\Source\\Palworld_Base.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "Palworld_BaseEditor",
+			"Path": "..\\Source\\Palworld_BaseEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
