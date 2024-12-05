@@ -47,6 +47,8 @@ APlayerCharacter::APlayerCharacter()
 	GetCharacterMovement()->RotationRate = FRotator(0.f, 500.f, 0.f);
 	GetCharacterMovement()->MaxWalkSpeed = 400.0f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.0f;
+	GetCharacterMovement()->JumpZVelocity = 500.0f; // 점프 높이.
+	JumpMaxCount = 1; // 한번에 점프 가능한 횟수. 1이 기본 값
 
 	//CombatComponent 세팅
 	PlayerEquipmentComponent = CreateDefaultSubobject<UPawnEquipmentComponent>(TEXT("PlayerEquipmentComponent"));
@@ -71,6 +73,8 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	UBaseInputComponent* BaseInputComponent = CastChecked<UBaseInputComponent>(PlayerInputComponent);
 	BaseInputComponent->BindNativeInputAction(InputConfigDataAsset, BaseGamePlayTag::InputTag_Move, ETriggerEvent::Triggered, this, &APlayerCharacter::Input_Move);
 	BaseInputComponent->BindNativeInputAction(InputConfigDataAsset, BaseGamePlayTag::InputTag_Look, ETriggerEvent::Triggered, this, &APlayerCharacter::Input_Look);
+
+	BaseInputComponent->BindNativeInputAction(InputConfigDataAsset, BaseGamePlayTag::InputTag_Jump, ETriggerEvent::Triggered, this, &APlayerCharacter::Input_Jump);
 
 	BaseInputComponent->BindAbilityInputAction(InputConfigDataAsset, this, &APlayerCharacter::Input_AbilityInputPressed, &APlayerCharacter::Input_AbilityInputReleased);
 
@@ -104,6 +108,22 @@ void APlayerCharacter::Input_Look(const FInputActionValue& InputActionValue)
 	{
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
+}
+
+void APlayerCharacter::Input_Jump(const FInputActionValue& InputActionValue)
+{
+}
+
+void APlayerCharacter::Input_StopJumping(const FInputActionValue& InputActionValue)
+{
+}
+
+void APlayerCharacter::Input_Run(const FInputActionValue& InputActionValue)
+{
+}
+
+void APlayerCharacter::Input_StopRunning(const FInputActionValue& InputActionValue)
+{
 }
 
 void APlayerCharacter::Input_AbilityInputPressed(FGameplayTag InputTag)

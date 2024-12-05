@@ -50,6 +50,10 @@ protected:
 
 	void Input_Move(const FInputActionValue& InputActionValue);
 	void Input_Look(const FInputActionValue& InputActionValue);
+	void Input_Jump(const FInputActionValue& InputActionValue);
+	void Input_StopJumping(const FInputActionValue& InputActionValue);
+	void Input_Run(const FInputActionValue& InputActionValue);
+	void Input_StopRunning(const FInputActionValue& InputActionValue);
 
 	void Input_AbilityInputPressed(FGameplayTag InputTag);
 	void Input_AbilityInputReleased(FGameplayTag InputTag);
