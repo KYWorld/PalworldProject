@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "EnhancedInputComponent.h"
 #include "DataAsset/Input/DataAsset_InputConfig.h"
+#include "BaseLibrary/BaseDebugHelper.h"
+
 #include "BaseInputComponent.generated.h"
 
 /**

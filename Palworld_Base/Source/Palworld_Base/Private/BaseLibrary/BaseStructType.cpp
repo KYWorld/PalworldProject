@@ -5,5 +5,5 @@
 
 bool FPlayerAbilitySet::IsValid() const
 {
-	return false;
+	return InputTag.IsValid() && AbilityToGrant;;
 }

@@ -12,13 +12,17 @@ void UDataAsset_StartupPlayer::GiveToAbilitySystemComponent(UBaseAbilitySystemCo
 
     for (const FPlayerAbilitySet& AbilitySet : PlayerStartupAbilitySets)
     {
-        if (!AbilitySet.IsValid()) continue;
+        if (!AbilitySet.IsValid())
+        {
+            continue;
+        }
 
         FGameplayAbilitySpec Spec(AbilitySet.AbilityToGrant);
         Spec.SourceObject = ASC->GetAvatarActor();
         Spec.Level = Level;
         //동적태그 생성 
         Spec.DynamicAbilityTags.AddTag(AbilitySet.InputTag);
+
 
         ASC->GiveAbility(Spec);
     }

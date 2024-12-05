@@ -8,7 +8,7 @@
 
 class APlayerCharacter;
 class ABasePlayerController;
-class UPlayerEquipmentComponent;
+
 /**
  * 
  */
@@ -18,18 +18,14 @@ class PALWORLD_BASE_API UPlayerGameplayAbility : public UBaseGameplayAbility
 	GENERATED_BODY()
 
 public:
-  /*  UFUNCTION(BlueprintPure, Category = "Ability")
+    UFUNCTION(BlueprintPure, Category = "Ability")
     APlayerCharacter* GetPlayerCharacterFromActorInfo();
 
     UFUNCTION(BlueprintPure, Category = "Ability")
     ABasePlayerController* GetPlayerControllerFromActorInfo();
 
-    UFUNCTION(BlueprintPure, Category = "Ability")
-    UPlayerEquipmentComponent* GetPlayerEquipmentComponentFromActorInfo();
 
-    UFUNCTION(BlueprintPure, Category = "Ability")
-    FGameplayEffectSpecHandle MakePlayerDamageEffectSpecHandle(TSubclassOf<UGameplayEffect> Effect, float WeaponBaseDamage, FGameplayTag AttackTypeTag, int32 ComboCount);*/
-
+  
 private:
     //영웅케릭터의 정보를 가지고 있다면 캐시 TWeakObjectPtr는 공유 참조가 존재하지 않을 때 객체를 자동으로 해제합니다. (약한 포인터)
     TWeakObjectPtr<APlayerCharacter> CachedPlayerCharacter;

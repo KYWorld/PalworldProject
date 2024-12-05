@@ -9,10 +9,17 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class ABasePlayerController;
+class APlayerCharacter;
 #ifdef PALWORLD_BASE_PlayerGameplayAbility_generated_h
 #error "PlayerGameplayAbility.generated.h already included, missing '#pragma once' in PlayerGameplayAbility.h"
 #endif
 #define PALWORLD_BASE_PlayerGameplayAbility_generated_h
+
+#define FID_Users_KGA_Desktop_Test_Palworld_Base_Source_Palworld_Base_Public_AbilitySystem_Ability_PlayerGameplayAbility_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGetPlayerControllerFromActorInfo); \
+	DECLARE_FUNCTION(execGetPlayerCharacterFromActorInfo);
+
 
 #define FID_Users_KGA_Desktop_Test_Palworld_Base_Source_Palworld_Base_Public_AbilitySystem_Ability_PlayerGameplayAbility_h_18_INCLASS_NO_PURE_DECLS \
 private: \
@@ -41,6 +48,7 @@ public: \
 #define FID_Users_KGA_Desktop_Test_Palworld_Base_Source_Palworld_Base_Public_AbilitySystem_Ability_PlayerGameplayAbility_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_Users_KGA_Desktop_Test_Palworld_Base_Source_Palworld_Base_Public_AbilitySystem_Ability_PlayerGameplayAbility_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Users_KGA_Desktop_Test_Palworld_Base_Source_Palworld_Base_Public_AbilitySystem_Ability_PlayerGameplayAbility_h_18_INCLASS_NO_PURE_DECLS \
 	FID_Users_KGA_Desktop_Test_Palworld_Base_Source_Palworld_Base_Public_AbilitySystem_Ability_PlayerGameplayAbility_h_18_ENHANCED_CONSTRUCTORS \
 private: \

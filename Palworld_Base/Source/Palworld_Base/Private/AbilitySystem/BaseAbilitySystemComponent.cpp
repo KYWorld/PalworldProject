@@ -23,6 +23,16 @@ void UBaseAbilitySystemComponent::OnAbilityInputPressed(const FGameplayTag& Inpu
 
 void UBaseAbilitySystemComponent::OnAbilityInputReleased(const FGameplayTag& InputTag)
 {
+    if (!InputTag.IsValid())
+    {
+        return;
+    }
+
+    //주입한 스펙으로 입력 실행
+    for (const FGameplayAbilitySpec& Spec : GetActivatableAbilities())
+    {
+        CancelAbilityHandle(Spec.Handle);
+    }
 }
 
 void UBaseAbilitySystemComponent::GrantPlayerWeaponAbilities(const TArray<FPlayerAbilitySet>& WeaponAbilities, int32 Level, TArray<FGameplayAbilitySpecHandle>& OutGrantedAbilitySpecHandles)

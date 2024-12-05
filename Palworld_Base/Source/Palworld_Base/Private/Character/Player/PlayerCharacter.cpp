@@ -74,10 +74,7 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	BaseInputComponent->BindNativeInputAction(InputConfigDataAsset, BaseGamePlayTag::InputTag_Move, ETriggerEvent::Triggered, this, &APlayerCharacter::Input_Move);
 	BaseInputComponent->BindNativeInputAction(InputConfigDataAsset, BaseGamePlayTag::InputTag_Look, ETriggerEvent::Triggered, this, &APlayerCharacter::Input_Look);
 
-	BaseInputComponent->BindNativeInputAction(InputConfigDataAsset, BaseGamePlayTag::InputTag_Jump, ETriggerEvent::Triggered, this, &APlayerCharacter::Input_Jump);
-
 	BaseInputComponent->BindAbilityInputAction(InputConfigDataAsset, this, &APlayerCharacter::Input_AbilityInputPressed, &APlayerCharacter::Input_AbilityInputReleased);
-
 }
 
 void APlayerCharacter::Input_Move(const FInputActionValue& InputActionValue)
@@ -108,22 +105,6 @@ void APlayerCharacter::Input_Look(const FInputActionValue& InputActionValue)
 	{
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
-}
-
-void APlayerCharacter::Input_Jump(const FInputActionValue& InputActionValue)
-{
-}
-
-void APlayerCharacter::Input_StopJumping(const FInputActionValue& InputActionValue)
-{
-}
-
-void APlayerCharacter::Input_Run(const FInputActionValue& InputActionValue)
-{
-}
-
-void APlayerCharacter::Input_StopRunning(const FInputActionValue& InputActionValue)
-{
 }
 
 void APlayerCharacter::Input_AbilityInputPressed(FGameplayTag InputTag)
