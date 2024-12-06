@@ -26,12 +26,15 @@ void UBaseAnimInstance::NativeThreadSafeUpdateAnimation(float DeltaSeconds)
 
 	//소유한 캐릭터의 속도
 	GroundSpeed = OwningCharacter->GetVelocity().Size2D();
+    Velocity = OwningCharacter->GetVelocity();
 
 	//소유한 캐릭터무브먼트의 움직임
 	bHasAcceleration = OwningMovementComponent->GetCurrentAcceleration().SizeSquared2D() > 0.f;
 
     //속도가 빠르면 달리기
 	bIsRun = OwningMovementComponent->GetCurrentAcceleration().SizeSquared2D() > 250.f;
+
+    bIsFalling = OwningMovementComponent->IsFalling();
 }
 
 bool UBaseAnimInstance::OwnerHasTag(FGameplayTag Tag) const
