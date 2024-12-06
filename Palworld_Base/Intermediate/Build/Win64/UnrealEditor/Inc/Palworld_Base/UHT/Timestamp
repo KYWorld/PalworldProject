@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\KGA\Desktop\Test\Palworld_Base\Source\Palworld_Base\Public\AbilitySystem\BaseAttributeSet.h
 C:\Users\KGA\Desktop\Test\Palworld_Base\Source\Palworld_Base\Public\AbilitySystem\Ability\PlayerGameplayAbility.h
 C:\Users\KGA\Desktop\Test\Palworld_Base\Source\Palworld_Base\Public\AnimInstance\PlayerAnimInstance.h
@@ -20,3 +21,27 @@ C:\Users\KGA\Desktop\Test\Palworld_Base\Source\Palworld_Base\Public\DataAsset\St
 C:\Users\KGA\Desktop\Test\Palworld_Base\Source\Palworld_Base\Public\BaseLibrary\BaseEnumType.h
 C:\Users\KGA\Desktop\Test\Palworld_Base\Source\Palworld_Base\Public\AbilitySystem\Ability\BaseGameplayAbility.h
 C:\Users\KGA\Desktop\Test\Palworld_Base\Source\Palworld_Base\Public\AbilitySystem\BaseAbilitySystemComponent.h
+=======
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\AbilitySystem\BaseAbilitySystemComponent.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\AbilitySystem\BaseAttributeSet.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\AbilitySystem\Ability\BaseGameplayAbility.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\AbilitySystem\Ability\PlayerGameplayAbility.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\AnimInstance\BaseAnimInstance.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\AnimInstance\PlayerAnimInstance.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\BaseLibrary\BaseEnumType.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\BaseLibrary\BaseFunctionLibrary.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\BaseLibrary\BaseStructType.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\Character\BaseCharacter.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\Character\Player\PlayerCharacter.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\Component\PawnExtensionComponent.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\Component\Equipment\PawnEquipmentComponent.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\Component\Input\BaseInputComponent.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\Controller\BasePlayerController.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\DataAsset\Input\DataAsset_InputConfig.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\DataAsset\StartupData\DataAsset_StartupBase.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\DataAsset\StartupData\DataAsset_StartupPlayer.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\GameMode\BaseGameMode.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\Item\ItemBase.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\Item\Equipment\EquipmentBase.h
+C:\Users\TaeHyun\Documents\PalworldProject\Palworld_Base\Source\Palworld_Base\Public\Widget\WidgetBase.h
+>>>>>>> origin/main

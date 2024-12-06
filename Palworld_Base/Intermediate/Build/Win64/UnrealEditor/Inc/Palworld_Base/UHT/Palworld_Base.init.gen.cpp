@@ -17,7 +17,11 @@ void EmptyLinkFunctionForGeneratedCodePalworld_Base_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
+<<<<<<< HEAD
 				0xA46FBC56,
+=======
+				0xB0C436D8,
+>>>>>>> origin/main
 				0xF08161F5,
 				METADATA_PARAMS(0, nullptr)
 			};
@@ -25,5 +29,9 @@ void EmptyLinkFunctionForGeneratedCodePalworld_Base_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_Palworld_Base.OuterSingleton;
 	}
+<<<<<<< HEAD
 	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Palworld_Base(Z_Construct_UPackage__Script_Palworld_Base, TEXT("/Script/Palworld_Base"), Z_Registration_Info_UPackage__Script_Palworld_Base, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xA46FBC56, 0xF08161F5));
+=======
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Palworld_Base(Z_Construct_UPackage__Script_Palworld_Base, TEXT("/Script/Palworld_Base"), Z_Registration_Info_UPackage__Script_Palworld_Base, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xB0C436D8, 0xF08161F5));
+>>>>>>> origin/main
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
