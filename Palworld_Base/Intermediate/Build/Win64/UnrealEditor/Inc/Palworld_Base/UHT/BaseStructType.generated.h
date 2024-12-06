@@ -14,14 +14,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define PALWORLD_BASE_BaseStructType_generated_h
 
-#define FID_Users_KGA_Desktop_Test_Palworld_Base_Source_Palworld_Base_Public_BaseLibrary_BaseStructType_h_14_GENERATED_BODY \
+#define FID_Users_TaeHyun_Documents_PalworldProject_Palworld_Base_Source_Palworld_Base_Public_BaseLibrary_BaseStructType_h_14_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FPlayerAbilitySet_Statics; \
 	PALWORLD_BASE_API static class UScriptStruct* StaticStruct();
 
 
 template<> PALWORLD_BASE_API UScriptStruct* StaticStruct<struct FPlayerAbilitySet>();
 
-#define FID_Users_KGA_Desktop_Test_Palworld_Base_Source_Palworld_Base_Public_BaseLibrary_BaseStructType_h_29_GENERATED_BODY \
+#define FID_Users_TaeHyun_Documents_PalworldProject_Palworld_Base_Source_Palworld_Base_Public_BaseLibrary_BaseStructType_h_29_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FHeroWeaponData_Statics; \
 	PALWORLD_BASE_API static class UScriptStruct* StaticStruct();
 
@@ -29,7 +29,7 @@ template<> PALWORLD_BASE_API UScriptStruct* StaticStruct<struct FPlayerAbilitySe
 template<> PALWORLD_BASE_API UScriptStruct* StaticStruct<struct FHeroWeaponData>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_KGA_Desktop_Test_Palworld_Base_Source_Palworld_Base_Public_BaseLibrary_BaseStructType_h
+#define CURRENT_FILE_ID FID_Users_TaeHyun_Documents_PalworldProject_Palworld_Base_Source_Palworld_Base_Public_BaseLibrary_BaseStructType_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
