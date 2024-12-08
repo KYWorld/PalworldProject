@@ -27,6 +27,23 @@ public:
 private:
 	virtual void BeginPlay() override;
 
+
+private:
+#pragma region Mesh
+	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
+	TArray<USkeletalMeshComponent*> Bodies;
+
+	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
+	USkeletalMeshComponent* Hair;
+	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
+	USkeletalMeshComponent* Head;
+	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
+	USkeletalMeshComponent* Outfit;
+	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
+	USkeletalMeshComponent* HeadEquip;
+
+#pragma endregion
+
 private:
 #pragma region Components
 	UPROPERTY(VisibleAnyWhere, BlueprintReadOnly, category = "Camera", meta = (AllowPrivateAccess = "true"))

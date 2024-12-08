@@ -31,7 +31,10 @@ void UBaseAbilitySystemComponent::OnAbilityInputReleased(const FGameplayTag& Inp
     //주입한 스펙으로 입력 실행
     for (const FGameplayAbilitySpec& Spec : GetActivatableAbilities())
     {
-        CancelAbilityHandle(Spec.Handle);
+        if (Spec.DynamicAbilityTags.HasTagExact(InputTag))
+        {
+            CancelAbilityHandle(Spec.Handle);
+        }
     }
 }
 
