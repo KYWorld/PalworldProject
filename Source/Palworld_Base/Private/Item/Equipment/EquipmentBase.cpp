@@ -7,4 +7,15 @@ AEquipmentBase::AEquipmentBase()
 {
     EquipmentItemMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("EquipmentItemMesh"));
     RootComponent = EquipmentItemMesh;
+
+}
+
+void AEquipmentBase::AssignGrantedAbilitySpecHandles(const TArray<FGameplayAbilitySpecHandle>& SpecHandles)
+{
+    GrantedAbilitySpecHandles = SpecHandles;
+}
+
+TArray<FGameplayAbilitySpecHandle> AEquipmentBase::GetGrantedAbilitySpecHandles() const
+{
+    return GrantedAbilitySpecHandles;
 }

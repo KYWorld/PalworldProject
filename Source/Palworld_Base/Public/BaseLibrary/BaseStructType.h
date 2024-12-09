@@ -24,7 +24,7 @@ struct FPlayerAbilitySet
 };
 
 USTRUCT(BlueprintType)
-struct FHeroWeaponData
+struct FPlayerEquipmentData
 {
     GENERATED_BODY()
 
