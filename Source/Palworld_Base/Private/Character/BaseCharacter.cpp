@@ -34,5 +34,5 @@ void ABaseCharacter::PossessedBy(AController* NewController)
 	}
 
 	//첫번째 인자값이 false면 디버그 모드에선 중단점이 발생하며, 게임에서 로그도 발생
-	ensureMsgf(!StartupData.IsNull(), TEXT("Forgot to assigned startup data to %s"), *GetName());
+	//ensureMsgf(!StartupData.IsNull(), TEXT("Forgot to assigned startup data to %s"), *GetName());
 }
