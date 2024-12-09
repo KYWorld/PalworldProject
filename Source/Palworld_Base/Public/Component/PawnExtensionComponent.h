@@ -7,7 +7,7 @@
 #include "PawnExtensionComponent.generated.h"
 
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(ClassGroup=(Common), meta=(BlueprintSpawnableComponent))
 class PALWORLD_BASE_API UPawnExtensionComponent : public UActorComponent
 {
 	GENERATED_BODY()

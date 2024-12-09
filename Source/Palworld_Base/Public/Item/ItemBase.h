@@ -18,10 +18,7 @@ public:
 	AItemBase();
 
 protected:
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weapon")
-    UStaticMeshComponent* ItemMesh;
-
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weapon")
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item")
     UBoxComponent* ItemCollsionBox;
 
 public:

@@ -10,7 +10,7 @@ class AItemBase;
 /**
  * 
  */
-UCLASS()
+UCLASS(ClassGroup = (Common), meta = (BlueprintSpawnableComponent))
 class PALWORLD_BASE_API UInventoryComponentBase : public UPawnExtensionComponent
 {
 	GENERATED_BODY()	

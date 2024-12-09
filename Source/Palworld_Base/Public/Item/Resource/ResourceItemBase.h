@@ -4,21 +4,20 @@
 
 #include "CoreMinimal.h"
 #include "Item/ItemBase.h"
-#include "EquipmentBase.generated.h"
+#include "ResourceItemBase.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class PALWORLD_BASE_API AEquipmentBase : public AItemBase
+class PALWORLD_BASE_API AResourceItemBase : public AItemBase
 {
 	GENERATED_BODY()
-
+	
 public:
-	// Sets default values for this actor's properties
-	AEquipmentBase();
+	AResourceItemBase();
 
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item")
-	USkeletalMeshComponent* EquipmentItemMesh;
+	USkeletalMeshComponent* ResourceItemMesh;
 };
