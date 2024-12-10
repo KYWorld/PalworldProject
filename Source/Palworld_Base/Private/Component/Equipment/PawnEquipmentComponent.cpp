@@ -20,7 +20,7 @@ void UPawnEquipmentComponent::RegisterSpawnedEquipment(FGameplayTag EquipmentTag
     if (bRegisterAsEquippedEquipment)
     {
         // 备泅秦具窃
-        //CurrentEquippedWeaponTag = WeaponTag;
+        CurrentEquippedEquipmentTag = EquipmentTag;
     }
 }
 
@@ -41,13 +41,12 @@ AEquipmentBase* UPawnEquipmentComponent::GetCharacterCarriedEquipmentByTag(FGame
 AEquipmentBase* UPawnEquipmentComponent::GetCharacterCurrentEquippedEquipment() const
 {
     // 公扁 备泅矫 积己
-   /* if (!CurrentEquippedWeaponTag.IsValid())
+   if (!CurrentEquippedEquipmentTag.IsValid())
     {
         return nullptr;
     }
 
-    return GetCharacterCarriedWeaponByTag(CurrentEquippedWeaponTag);*/
-    return nullptr;
+    return GetCharacterCarriedEquipmentByTag(CurrentEquippedEquipmentTag);
 }
 
 void UPawnEquipmentComponent::ToggleEquipmentCollsion(bool bUse, EToggleDamageType ToggleDamageType)

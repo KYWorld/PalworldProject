@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Item/ItemBase.h"
+#include "GameplayAbilitySpecHandle.h"
+#include "BaseLibrary/BaseStructType.h"
 #include "EquipmentBase.generated.h"
 
 /**
@@ -21,4 +23,18 @@ public:
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item")
 	USkeletalMeshComponent* EquipmentItemMesh;
+
+public:
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "WeaponData")
+    FPlayerEquipmentData PlayerEquipmentData;
+
+    UFUNCTION(BlueprintCallable)
+    void AssignGrantedAbilitySpecHandles(const TArray<FGameplayAbilitySpecHandle>& SpecHandles);
+
+    UFUNCTION(BlueprintPure)
+    TArray<FGameplayAbilitySpecHandle> GetGrantedAbilitySpecHandles() const;
+
+private:
+
+    TArray<FGameplayAbilitySpecHandle> GrantedAbilitySpecHandles;
 };
