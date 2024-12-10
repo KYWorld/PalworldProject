@@ -44,5 +44,13 @@ private:
 	int32 bDetourCrowdAvoidenceQuality = 4;
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI", meta = (EditCondition = "bDetourCrowdAvoidence"))
-	float CollsionQueryRange = 600.f;
+	float CollsionQueryRange = 600.f;	
+
+
+	UFUNCTION(BlueprintCallable)
+	void SetTeamId(const FGenericTeamId& NewTeamID);
+
+	UFUNCTION(BlueprintCallable)
+	FGenericTeamId GetTeamId();
+
 };

@@ -7,6 +7,11 @@
 
 #include "AbilitySystemBlueprintLibrary.h"
 
+UBaseGameplayAbility::UBaseGameplayAbility()
+{
+    //SetCanBeCanceled(false);
+}
+
 void UBaseGameplayAbility::OnGiveAbility(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec)
 {
     Super::OnGiveAbility(ActorInfo, Spec);

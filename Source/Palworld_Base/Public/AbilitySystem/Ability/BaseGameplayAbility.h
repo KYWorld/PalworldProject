@@ -25,7 +25,8 @@ class PALWORLD_BASE_API UBaseGameplayAbility : public UGameplayAbility
 {
 	GENERATED_BODY()
 
-
+public:
+	UBaseGameplayAbility();
 
 protected:
 	virtual void OnGiveAbility(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec) override;
