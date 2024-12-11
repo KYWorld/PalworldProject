@@ -14,6 +14,13 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Roll, "InputTag.Roll");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Attack, "InputTag.Attack");
 
+    // Input Build Tags
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_Build, "InputTag.Build");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_PlaceBuild, "InputTag.PlaceBuild");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_RotateMesh, "InputTag.RotateMesh");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_OppositeRotateMesh, "InputTag.OppositeRotateMesh");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_Destroy, "InputTag.Destroy");
+
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Interact, "InputTag.Interact");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Inventory, "InputTag.Inventory");
 	
