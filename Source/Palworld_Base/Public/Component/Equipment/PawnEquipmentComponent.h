@@ -49,6 +49,31 @@ public:
     virtual void OnHitTargetActor(AActor* HitActor);
     virtual void OnEquipmentPulledFromTargetActor(AActor* InterectedActor);
 
+
+
+
+
+    //캐릭터가 투사체를 던지기 전 무기의 태그
+    UPROPERTY(BlueprintReadWrite, Category = "Player")
+    FGameplayTag CurrentCachedEquippedEquipmentTag;
+    UFUNCTION(BlueprintCallable, Category = "Player")
+    void SetCachedEquippedEquipmentTag(FGameplayTag CachedTag);
+
+
+
+
+
+
+
+
+    //스폰한 장비
+    UPROPERTY(BlueprintReadWrite, Category = "Player")
+    AEquipmentBase* SpawnedEquipment;
+
+    UFUNCTION(BlueprintCallable, Category = "Player")
+    void SetSpawnedEquipment(AEquipmentBase* _SpawnedEquipment);
+
+
 protected:
     TArray<AActor*> OverlappedActors;
 

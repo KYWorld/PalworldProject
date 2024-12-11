@@ -13,7 +13,6 @@ void UPawnEquipmentComponent::RegisterSpawnedEquipment(FGameplayTag EquipmentTag
     if (!CharacterCarriedEquipmentMap.Contains(EquipmentTag))
     {
         CharacterCarriedEquipmentMap.Emplace(EquipmentTag, Equipment);
-
     }
 
     // 무기 델리게이트 등록
@@ -82,4 +81,15 @@ void UPawnEquipmentComponent::OnHitTargetActor(AActor* HitActor)
 
 void UPawnEquipmentComponent::OnEquipmentPulledFromTargetActor(AActor* InterectedActor)
 {
+}
+
+
+void UPawnEquipmentComponent::SetCachedEquippedEquipmentTag(FGameplayTag CachedTag)
+{
+    CurrentCachedEquippedEquipmentTag = CachedTag;
+}
+
+void UPawnEquipmentComponent::SetSpawnedEquipment(AEquipmentBase* _SpawnedEquipment)
+{
+    SpawnedEquipment = _SpawnedEquipment;
 }

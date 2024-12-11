@@ -69,7 +69,6 @@ void UBaseAbilitySystemComponent::RemoveGrantedPlayerWeaponAbilities(UPARAM(ref)
 
     for (FGameplayAbilitySpecHandle& SpecHandle : SpecHandlesToRemove)
     {
-        UE_LOG(LogTemp, Warning, TEXT("SpecHandle"));
 
         if (SpecHandle.IsValid())
         {
