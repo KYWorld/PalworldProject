@@ -60,6 +60,8 @@ void UBaseAbilitySystemComponent::GrantPlayerWeaponAbilities(const TArray<FPlaye
 
 void UBaseAbilitySystemComponent::RemoveGrantedPlayerWeaponAbilities(UPARAM(ref)TArray<FGameplayAbilitySpecHandle>& SpecHandlesToRemove)
 {
+  
+
     if (SpecHandlesToRemove.IsEmpty())
     {
         return;
@@ -67,6 +69,8 @@ void UBaseAbilitySystemComponent::RemoveGrantedPlayerWeaponAbilities(UPARAM(ref)
 
     for (FGameplayAbilitySpecHandle& SpecHandle : SpecHandlesToRemove)
     {
+        UE_LOG(LogTemp, Warning, TEXT("SpecHandle"));
+
         if (SpecHandle.IsValid())
         {
             ClearAbility(SpecHandle);

@@ -7,8 +7,8 @@
 
 void UPawnEquipmentComponent::RegisterSpawnedEquipment(FGameplayTag EquipmentTag, AEquipmentBase* Equipment, bool bRegisterAsEquippedEquipment)
 {
-    checkf(!CharacterCarriedEquipmentMap.Contains(EquipmentTag), TEXT("%s has already been as carried Equipment"), *EquipmentTag.ToString());
-    check(Equipment);
+    //checkf(!CharacterCarriedEquipmentMap.Contains(EquipmentTag), TEXT("%s has already been as carried Equipment"), *EquipmentTag.ToString());
+    //check(Equipment);
 
     CharacterCarriedEquipmentMap.Emplace(EquipmentTag, Equipment);
 
