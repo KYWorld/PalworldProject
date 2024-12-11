@@ -5,6 +5,7 @@
 #include "Character/BaseCharacter.h"
 #include "BaseLibrary/BaseFunctionLibrary.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "KismetAnimationLibrary.h"
 
 void UBaseAnimInstance::NativeInitializeAnimation()
 {
@@ -36,6 +37,8 @@ void UBaseAnimInstance::NativeThreadSafeUpdateAnimation(float DeltaSeconds)
 
     bIsFalling = OwningMovementComponent->IsFalling();
     bIsCrouching = OwningMovementComponent->IsCrouching();
+
+    LocomotionDirection = UKismetAnimationLibrary::CalculateDirection(OwningCharacter->GetVelocity(), OwningCharacter->GetActorRotation());
 }
 
 bool UBaseAnimInstance::OwnerHasTag(FGameplayTag Tag) const
