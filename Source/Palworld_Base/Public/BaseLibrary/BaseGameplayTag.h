@@ -61,4 +61,15 @@ namespace BaseGamePlayTag
 	PALWORLD_BASE_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(Player_Event_Equipment_Unquip);
 	PALWORLD_BASE_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(Player_Event_Equipment_Throw);
 
+
+
+
+
+
+
+
+
+
+	//Pal Tags
+	PALWORLD_BASE_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(Pal_Ability_Attack);
 }

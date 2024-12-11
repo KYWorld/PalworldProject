@@ -79,3 +79,35 @@ void UBaseAbilitySystemComponent::RemoveGrantedPlayerWeaponAbilities(UPARAM(ref)
 
     SpecHandlesToRemove.Empty();
 }
+
+bool UBaseAbilitySystemComponent::TryActivateAbilityByTag(FGameplayTag Tag)
+{
+    check(Tag.IsValid());
+
+    TArray<FGameplayAbilitySpec*> AbilitySpecs;
+    //이 함수는 활성화 가능한 모든 게임 어빌리티 스펙을 가져온다.
+    GetActivatableGameplayAbilitySpecsByAllMatchingTags(Tag.GetSingleTagContainer(), AbilitySpecs);
+
+    //AbilitySpecs 배열에 받은 데이터가 있으면
+    if (!AbilitySpecs.IsEmpty())
+    {
+        const int32 RandomAbilityIndex = FMath::RandRange(0, AbilitySpecs.Num() - 1);
+        FGameplayAbilitySpec* AbilitySpec = AbilitySpecs[RandomAbilityIndex];
+
+        check(AbilitySpec);
+
+        if (!AbilitySpec->IsActive())
+        {
+            return TryActivateAbility(AbilitySpec->Handle);
+        }
+    }
+
+    return false;
+}
+
+void UBaseAbilitySystemComponent::TryCancelAbilityByTag(FGameplayTag Tag)
+{
+    check(Tag.IsValid());
+    FGameplayTagContainer GameplayTagContainer = Tag.GetSingleTagContainer();
+    CancelAbilities(&GameplayTagContainer);
+}

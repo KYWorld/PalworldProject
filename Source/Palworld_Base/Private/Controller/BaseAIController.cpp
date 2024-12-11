@@ -46,8 +46,6 @@ ABaseAIController::ABaseAIController(const FObjectInitializer& ObjectInitializer
 	AIPerceptionComponent->SetDominantSense(UAISenseConfig_Sight::StaticClass());
 	AIPerceptionComponent->OnTargetPerceptionUpdated.AddUniqueDynamic(this, &ABaseAIController::OnEnemyPerceptionUpdated);
 
-	//팀 아이디 부여
-	SetGenericTeamId(FGenericTeamId(1));
 }
 
 void ABaseAIController::OnEnemyPerceptionUpdated(AActor* Actor, FAIStimulus Stimulus)
@@ -112,4 +110,15 @@ void ABaseAIController::BeginPlay()
 		CrowdFollowingComponent->SetGroupsToAvoid(1);
 		CrowdFollowingComponent->SetCrowdCollisionQueryRange(CollsionQueryRange);
 	}
+}
+
+void ABaseAIController::SetTeamId(const FGenericTeamId& NewTeamID)
+{
+	//팀 아이디 부여
+	SetGenericTeamId(NewTeamID);
+}
+
+FGenericTeamId ABaseAIController::GetTeamId()
+{
+	return GetGenericTeamId();
 }

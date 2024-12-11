@@ -55,6 +55,13 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Equipment_Equip, "Player.Event.Equipment.Equip");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Equipment_Unquip, "Player.Event.Equipment.Unquip");
 
-	//	PALWORLD_BASE_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(Player_Event_Equipment_Throw);
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Equipment_Throw, "Player.Event.Equipment.Throw");
+
+
+
+
+
+
+	//Pal Tags
+	UE_DEFINE_GAMEPLAY_TAG(Pal_Ability_Attack, "Pal.Ability.Attack");
 }

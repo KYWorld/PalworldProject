@@ -10,7 +10,11 @@ void UPawnEquipmentComponent::RegisterSpawnedEquipment(FGameplayTag EquipmentTag
     //checkf(!CharacterCarriedEquipmentMap.Contains(EquipmentTag), TEXT("%s has already been as carried Equipment"), *EquipmentTag.ToString());
     //check(Equipment);
 
-    CharacterCarriedEquipmentMap.Emplace(EquipmentTag, Equipment);
+    if (!CharacterCarriedEquipmentMap.Contains(EquipmentTag))
+    {
+        CharacterCarriedEquipmentMap.Emplace(EquipmentTag, Equipment);
+
+    }
 
     // 무기 델리게이트 등록
     // Equipment->OnItemHitTarget.BindUObject(this, &UPawnEquipmentComponent::OnHitTargetActor);
