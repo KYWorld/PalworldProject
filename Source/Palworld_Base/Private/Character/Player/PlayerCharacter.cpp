@@ -61,6 +61,7 @@ APlayerCharacter::APlayerCharacter()
 	GetCharacterMovement()->MaxWalkSpeed = 400.0f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.0f;
 	GetCharacterMovement()->JumpZVelocity = 500.0f; // 점프 높이.
+	//GetCharacterMovement()->bCanCrouch = True; // 점프 높이.
 	JumpMaxCount = 1; // 한번에 점프 가능한 횟수. 1이 기본 값
 
 	//CombatComponent 세팅
