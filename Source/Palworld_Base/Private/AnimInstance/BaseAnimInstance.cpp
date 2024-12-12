@@ -43,6 +43,8 @@ void UBaseAnimInstance::NativeThreadSafeUpdateAnimation(float DeltaSeconds)
     
     FRotator DeltaRotator = UKismetMathLibrary::NormalizedDeltaRotator(OwningCharacter->GetActorRotation(), OwningCharacter->GetBaseAimRotation());
     Pitch = DeltaRotator.Pitch;
+
+    bIsAiming = OwningCharacter->bIsAiming;
 }
 
 bool UBaseAnimInstance::OwnerHasTag(FGameplayTag Tag) const
