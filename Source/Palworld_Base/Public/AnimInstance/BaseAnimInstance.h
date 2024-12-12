@@ -44,11 +44,18 @@ protected:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Locomotion")
 	bool bIsCrouching;
 
+
+
+
+
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Locomotion")
 	FVector Velocity;
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Locomotion")
 	float LocomotionDirection;
+
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Locomotion")
+	float Pitch;
 
 protected:
 	UFUNCTION(BlueprintPure, meta = (BlueprintThreadSafe))
