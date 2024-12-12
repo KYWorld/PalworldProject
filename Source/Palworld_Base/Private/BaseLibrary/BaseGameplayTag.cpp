@@ -68,5 +68,4 @@ namespace BaseGamePlayTag
 
 	//Pal Tags
 	UE_DEFINE_GAMEPLAY_TAG(Pal_Ability_Attack, "Pal.Ability.Attack");
-	UE_DEFINE_GAMEPLAY_TAG(Pal_Ability_Skill, "Pal.Ability.Skill");
 }
