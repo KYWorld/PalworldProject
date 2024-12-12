@@ -18,6 +18,8 @@
 #include "DataAsset/StartupData/DataAsset_StartupBase.h"
 #include "Component/Equipment/PawnEquipmentComponent.h"
 
+#include "Item/Equipment/EquipmentBase.h"
+
 #include "BaseLibrary/BaseDebugHelper.h"
 
 APlayerCharacter::APlayerCharacter()
@@ -47,11 +49,11 @@ APlayerCharacter::APlayerCharacter()
 	Hair->SetupAttachment(GetMesh());
 	Head = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Head"));
 	Head->SetupAttachment(GetMesh());
-	Outfit = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Outfit"));
-	Outfit->SetupAttachment(GetMesh());
 	HeadEquip = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("HeadEquip"));
 	HeadEquip->SetupAttachment(GetMesh());
-
+	WeaponSocket = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("WeaponSocket"));
+	//WeaponSocket->SetupAttachment(GetMesh(), TEXT("Socket_Weapon_R"));
+	WeaponSocket->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_Weapon_R"));
 	
 
 
@@ -151,4 +153,11 @@ void APlayerCharacter::PossessedBy(AController* NewController)
 			LoadedData->GiveToAbilitySystemComponent(GetBaseAbilitySystemComponent());
 		}
 	}
+}
+
+void APlayerCharacter::SetPlayerRotateToMovement(bool Value)
+{
+	GetCharacterMovement()->bOrientRotationToMovement = !Value;
+	GetCharacterMovement()->bUseControllerDesiredRotation = Value;
+	bIsAiming = Value;
 }

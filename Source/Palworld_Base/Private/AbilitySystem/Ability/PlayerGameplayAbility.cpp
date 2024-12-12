@@ -4,6 +4,7 @@
 #include "AbilitySystem/Ability/PlayerGameplayAbility.h"
 #include "Character/Player/PlayerCharacter.h"
 #include "Controller/BasePlayerController.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 #include "AbilitySystem/BaseAbilitySystemComponent.h"
 #include "BaseLibrary/BaseGameplayTag.h"
@@ -27,4 +28,5 @@ ABasePlayerController* UPlayerGameplayAbility::GetPlayerControllerFromActorInfo(
     }
     return CachedPlayerController.IsValid() ? CachedPlayerController.Get() : nullptr;
 }
+
 

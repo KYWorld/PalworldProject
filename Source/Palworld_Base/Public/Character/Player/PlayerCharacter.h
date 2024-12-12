@@ -11,6 +11,7 @@ class USpringArmComponent;
 class UCameraComponent;
 class UDataAsset_InputConfig;
 class UPawnEquipmentComponent;
+class AEquipmentBase;
 
 struct FInputActionValue;
 /**
@@ -28,19 +29,18 @@ private:
 	virtual void BeginPlay() override;
 
 
-private:
+public:
 #pragma region Mesh
-	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
-	TArray<USkeletalMeshComponent*> Bodies;
 
 	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
 	USkeletalMeshComponent* Hair;
 	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
 	USkeletalMeshComponent* Head;
 	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
-	USkeletalMeshComponent* Outfit;
-	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
 	USkeletalMeshComponent* HeadEquip;
+
+	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
+	USkeletalMeshComponent* WeaponSocket;
 
 #pragma endregion
 
@@ -75,6 +75,12 @@ protected:
 protected:
 	virtual void PossessedBy(AController* NewController) override;
 
+public:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Movement", meta = (AllowPrivateAccess = "true"))
+	bool bIsAiming;
+
+	UFUNCTION(BlueprintCallable, Category = "Movement")
+	void SetPlayerRotateToMovement(bool Value);
 
 public:
 	FORCEINLINE UPawnEquipmentComponent* GetPlayerEquipmentComponent() const { return PlayerEquipmentComponent; }
