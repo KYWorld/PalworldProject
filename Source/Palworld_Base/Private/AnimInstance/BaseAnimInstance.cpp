@@ -6,7 +6,7 @@
 #include "BaseLibrary/BaseFunctionLibrary.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "KismetAnimationLibrary.h"
-
+#include "Kismet/KismetMathLibrary.h"
 void UBaseAnimInstance::NativeInitializeAnimation()
 {
     //TryGetPawnOwner 소유자의 Pawn 반환
@@ -39,6 +39,10 @@ void UBaseAnimInstance::NativeThreadSafeUpdateAnimation(float DeltaSeconds)
     bIsCrouching = OwningMovementComponent->IsCrouching();
 
     LocomotionDirection = UKismetAnimationLibrary::CalculateDirection(OwningCharacter->GetVelocity(), OwningCharacter->GetActorRotation());
+
+    
+    FRotator DeltaRotator = UKismetMathLibrary::NormalizedDeltaRotator(OwningCharacter->GetActorRotation(), OwningCharacter->GetBaseAimRotation());
+    Pitch = DeltaRotator.Pitch;
 }
 
 bool UBaseAnimInstance::OwnerHasTag(FGameplayTag Tag) const
