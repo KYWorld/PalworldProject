@@ -15,7 +15,7 @@ class AEquipmentBase;
 
 struct FInputActionValue;
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPlayerEquipmentType : uint8
 {
 	Weapon,
