@@ -66,16 +66,16 @@ APlayerCharacter::APlayerCharacter()
 	CharacterEquipmentMap.Add(EPlayerEquipmentType::Weapon, Weapon);
 
 	USkeletalMeshComponent* BackWeapon1 = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BackWeapon1"));
-	BackWeapon1->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_Weapon_R"));
+	BackWeapon1->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_BackWeapon_R"));
 	CharacterEquipmentMap.Add(EPlayerEquipmentType::BackWeapon1, BackWeapon1);
 
 	USkeletalMeshComponent* BackWeapon2 = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BackWeapon2"));
-	BackWeapon2->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_Weapon_R"));
-	CharacterEquipmentMap.Add(EPlayerEquipmentType::Weapon, BackWeapon2);
+	BackWeapon2->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_BackWeapon_L"));
+	CharacterEquipmentMap.Add(EPlayerEquipmentType::BackWeapon2, BackWeapon2);
 
 	USkeletalMeshComponent* BackWeapon3 = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BackWeapon3"));
-	BackWeapon3->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_Weapon_R"));
-	CharacterEquipmentMap.Add(EPlayerEquipmentType::Weapon, BackWeapon3);
+	BackWeapon3->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_BackWeapon_L"));
+	CharacterEquipmentMap.Add(EPlayerEquipmentType::BackWeapon3, BackWeapon3);
 
 
 	//케릭터움직임 초기세팅

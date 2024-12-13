@@ -25,7 +25,43 @@ struct FPlayerAbilitySet
 };
 
 USTRUCT(BlueprintType)
+struct FArmorStatus
+{
+    GENERATED_BODY()
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Categories = "Status"))
+    float Defence;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Categories = "Status"))
+    float Hp;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Categories = "Status"))
+    float Durability;
+};
+
+USTRUCT(BlueprintType)
+struct FWeaponStatus
+{
+    GENERATED_BODY()
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Categories = "Status"))
+    float Attack;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Categories = "Status"))
+    float Durability;
+};
+
+USTRUCT(BlueprintType)
 struct FPlayerEquipmentData
+{
+    GENERATED_BODY()
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (TitleProperty = "Status"))
+    FArmorStatus ArmorStatus;
+};
+
+USTRUCT(BlueprintType)
+struct FPlayerWeaponData
 {
     GENERATED_BODY()
 
@@ -40,5 +76,5 @@ struct FPlayerEquipmentData
     TArray<FPlayerAbilitySet> WeaponAbilities;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-    FScalableFloat WeaponBaseDamage;
+    FWeaponStatus WeaponStatus;
 };
