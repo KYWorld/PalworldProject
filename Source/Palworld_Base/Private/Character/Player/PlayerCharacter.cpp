@@ -45,16 +45,37 @@ APlayerCharacter::APlayerCharacter()
 	FollowCamera->bUsePawnControlRotation = false;
 
 	//캐릭터 메쉬 세팅
-	Hair = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Hair"));
+	//USkeletalMeshComponent* Outfit; //= CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Outfit"));
+	//Outfit = GetMesh();
+	CharacterEquipmentMap.Add(EPlayerEquipmentType::Outfit, GetMesh());
+
+	USkeletalMeshComponent* Hair = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Hair"));
 	Hair->SetupAttachment(GetMesh());
-	Head = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Head"));
+	CharacterEquipmentMap.Add(EPlayerEquipmentType::Hair, Hair);
+
+	USkeletalMeshComponent* Head = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Head"));
 	Head->SetupAttachment(GetMesh());
-	HeadEquip = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("HeadEquip"));
+	CharacterEquipmentMap.Add(EPlayerEquipmentType::Head, Head);
+
+	USkeletalMeshComponent* HeadEquip = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("HeadEquip"));
 	HeadEquip->SetupAttachment(GetMesh());
-	WeaponSocket = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("WeaponSocket"));
-	//WeaponSocket->SetupAttachment(GetMesh(), TEXT("Socket_Weapon_R"));
-	WeaponSocket->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_Weapon_R"));
-	
+	CharacterEquipmentMap.Add(EPlayerEquipmentType::HeadEquip, HeadEquip);
+
+	USkeletalMeshComponent* Weapon = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Weapon"));
+	Weapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_Weapon_R"));
+	CharacterEquipmentMap.Add(EPlayerEquipmentType::Weapon, Weapon);
+
+	USkeletalMeshComponent* BackWeapon1 = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BackWeapon1"));
+	BackWeapon1->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_Weapon_R"));
+	CharacterEquipmentMap.Add(EPlayerEquipmentType::BackWeapon1, BackWeapon1);
+
+	USkeletalMeshComponent* BackWeapon2 = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BackWeapon2"));
+	BackWeapon2->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_Weapon_R"));
+	CharacterEquipmentMap.Add(EPlayerEquipmentType::Weapon, BackWeapon2);
+
+	USkeletalMeshComponent* BackWeapon3 = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BackWeapon3"));
+	BackWeapon3->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_Weapon_R"));
+	CharacterEquipmentMap.Add(EPlayerEquipmentType::Weapon, BackWeapon3);
 
 
 	//케릭터움직임 초기세팅

@@ -14,8 +14,24 @@ class UPawnEquipmentComponent;
 class AEquipmentBase;
 
 struct FInputActionValue;
+
+UENUM()
+enum class EPlayerEquipmentType : uint8
+{
+	Weapon,
+	BackWeapon1,
+	BackWeapon2,
+	BackWeapon3,
+	Head,
+	Hair,
+	HeadEquip,
+	Outfit
+};
+
+
+
 /**
- * 
+ *
  */
 UCLASS()
 class PALWORLD_BASE_API APlayerCharacter : public ABaseCharacter
@@ -33,14 +49,7 @@ public:
 #pragma region Mesh
 
 	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
-	USkeletalMeshComponent* Hair;
-	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
-	USkeletalMeshComponent* Head;
-	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
-	USkeletalMeshComponent* HeadEquip;
-
-	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Mesh", meta = (AllowPrivateAccess = "true"))
-	USkeletalMeshComponent* WeaponSocket;
+	TMap<EPlayerEquipmentType, USkeletalMeshComponent*> CharacterEquipmentMap;
 
 #pragma endregion
 
