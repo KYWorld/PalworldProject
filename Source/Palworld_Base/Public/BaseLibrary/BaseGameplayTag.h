@@ -71,4 +71,5 @@ namespace BaseGamePlayTag
 
 	//Pal Tags
 	PALWORLD_BASE_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(Pal_Ability_Attack);
+	PALWORLD_BASE_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(Pal_Ability_Skill);
 }
