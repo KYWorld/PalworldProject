@@ -25,7 +25,8 @@ enum class EPlayerEquipmentType : uint8
 	Head,
 	Hair,
 	HeadEquip,
-	Outfit
+	Outfit,
+	Null
 };
 
 

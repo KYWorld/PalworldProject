@@ -9,13 +9,3 @@ AEquipmentBase::AEquipmentBase()
     RootComponent = EquipmentItemMesh;
 
 }
-
-void AEquipmentBase::AssignGrantedAbilitySpecHandles(const TArray<FGameplayAbilitySpecHandle>& SpecHandles)
-{
-    GrantedAbilitySpecHandles = SpecHandles;
-}
-
-TArray<FGameplayAbilitySpecHandle> AEquipmentBase::GetGrantedAbilitySpecHandles() const
-{
-    return GrantedAbilitySpecHandles;
-}
