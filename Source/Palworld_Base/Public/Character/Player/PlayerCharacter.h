@@ -91,6 +91,13 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Movement")
 	void SetPlayerRotateToMovement(bool Value);
 
+
+	UFUNCTION(BlueprintCallable, Category = "Mesh")
+	USkeletalMeshComponent* FindMeshComponent(EPlayerEquipmentType EquipmentType);
+
+	UFUNCTION(BlueprintCallable, Category = "Mesh")
+	void SetMeshComponent(EPlayerEquipmentType EquipmentType, USkeletalMesh* SkeletalMesh);
+
 public:
 	FORCEINLINE UPawnEquipmentComponent* GetPlayerEquipmentComponent() const { return PlayerEquipmentComponent; }
 

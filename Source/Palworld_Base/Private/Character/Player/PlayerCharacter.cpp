@@ -182,3 +182,13 @@ void APlayerCharacter::SetPlayerRotateToMovement(bool Value)
 	GetCharacterMovement()->bUseControllerDesiredRotation = Value;
 	bIsAiming = Value;
 }
+
+USkeletalMeshComponent* APlayerCharacter::FindMeshComponent(EPlayerEquipmentType EquipmentType)
+{
+	return  *CharacterEquipmentMap.Find(EquipmentType);
+}
+
+void APlayerCharacter::SetMeshComponent(EPlayerEquipmentType EquipmentType, USkeletalMesh* SkeletalMesh)
+{
+	FindMeshComponent(EquipmentType)->SetSkeletalMesh(SkeletalMesh);
+}
