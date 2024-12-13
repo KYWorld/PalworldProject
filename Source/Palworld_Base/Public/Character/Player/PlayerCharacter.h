@@ -84,4 +84,8 @@ public:
 
 public:
 	FORCEINLINE UPawnEquipmentComponent* GetPlayerEquipmentComponent() const { return PlayerEquipmentComponent; }
+
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Movement", meta = (AllowPrivateAccess = "true"))
+	bool bIsGliding;
 };
