@@ -45,7 +45,8 @@ protected:
 	bool bIsCrouching;
 
 
-
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Locomotion")
+	bool bIsAiming;
 
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Locomotion")
