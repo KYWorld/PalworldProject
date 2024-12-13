@@ -19,5 +19,5 @@ public:
 
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item")
-	USkeletalMeshComponent* ResourceItemMesh;
+	UStaticMeshComponent* ResourceItemMesh;
 };

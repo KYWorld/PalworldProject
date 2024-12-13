@@ -5,6 +5,6 @@
 
 AResourceItemBase::AResourceItemBase()
 {
-    ResourceItemMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ResourceItemMesh"));
+    ResourceItemMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ResourceItemMesh"));
     RootComponent = ResourceItemMesh;
 }
