@@ -19,8 +19,8 @@ class PALWORLD_BASE_API UBaseAnimInstance : public UAnimInstance
 	GENERATED_BODY()
 
 public:
-	virtual void NativeInitializeAnimation() override; //ÃÊ±â°ª ¼³Á¤µÈ
-	virtual void NativeThreadSafeUpdateAnimation(float DeltaSeconds); //¾÷µ¥ÀÌÆ®½Ã ÃÖÀûÈ­ ½ÃÅ³¼ö ÀÖ´Â ÇÔ¼ö
+	virtual void NativeInitializeAnimation() override; //ï¿½Ê±â°ª ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	virtual void NativeThreadSafeUpdateAnimation(float DeltaSeconds); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­ ï¿½ï¿½Å³ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Ô¼ï¿½
 
 protected:
 	UPROPERTY()
@@ -48,6 +48,8 @@ protected:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Locomotion")
 	bool bIsAiming;
 
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Locomotion")
+	bool bIsSwimming;
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Locomotion")
 	FVector Velocity;

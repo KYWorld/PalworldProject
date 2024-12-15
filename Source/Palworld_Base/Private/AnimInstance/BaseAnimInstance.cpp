@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "AnimInstance/BaseAnimInstance.h"
@@ -9,7 +9,7 @@
 #include "Kismet/KismetMathLibrary.h"
 void UBaseAnimInstance::NativeInitializeAnimation()
 {
-    //TryGetPawnOwner ¼ÒÀ¯ÀÚÀÇ Pawn ¹ÝÈ¯
+    //TryGetPawnOwner ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Pawn ï¿½ï¿½È¯
     OwningCharacter = Cast<ABaseCharacter>(TryGetPawnOwner());
     if (OwningCharacter)
     {
@@ -19,24 +19,25 @@ void UBaseAnimInstance::NativeInitializeAnimation()
 
 void UBaseAnimInstance::NativeThreadSafeUpdateAnimation(float DeltaSeconds)
 {
-    //¼ÒÀ¯ÇÑ Ä³¸¯ÅÍ¿Í ¼ÒÀ¯ÇÑ ¹«ºê¸ÕÆ®Áß ÇÏ³ª¶óµµ nullptrÀÌ¸é
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ nullptrï¿½Ì¸ï¿½
 	if (!OwningCharacter || !OwningMovementComponent)
 	{
 		return;
 	}
 
-	//¼ÒÀ¯ÇÑ Ä³¸¯ÅÍÀÇ ¼Óµµ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½
 	GroundSpeed = OwningCharacter->GetVelocity().Size2D();
     Velocity = OwningCharacter->GetVelocity();
 
-	//¼ÒÀ¯ÇÑ Ä³¸¯ÅÍ¹«ºê¸ÕÆ®ÀÇ ¿òÁ÷ÀÓ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Í¹ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	bHasAcceleration = OwningMovementComponent->GetCurrentAcceleration().SizeSquared2D() > 0.f;
 
-    //¼Óµµ°¡ ºü¸£¸é ´Þ¸®±â
+    //ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¸ï¿½ï¿½ï¿½
 	bIsRun = OwningMovementComponent->GetCurrentAcceleration().SizeSquared2D() > 250.f;
 
     bIsFalling = OwningMovementComponent->IsFalling();
     bIsCrouching = OwningMovementComponent->IsCrouching();
+    bIsSwimming = OwningMovementComponent->IsSwimming();
 
     LocomotionDirection = UKismetAnimationLibrary::CalculateDirection(OwningCharacter->GetVelocity(), OwningCharacter->GetActorRotation());
 
