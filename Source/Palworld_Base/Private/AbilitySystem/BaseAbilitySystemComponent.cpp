@@ -13,7 +13,7 @@ void UBaseAbilitySystemComponent::OnAbilityInputPressed(const FGameplayTag& Inpu
         return;
     }
 
-    //ÁÖÀÔÇÑ ½ºÆåÀ¸·Î ÀÔ·Â ½ÇÇà
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½
     for (const FGameplayAbilitySpec& Spec : GetActivatableAbilities())
     {
         if (!Spec.DynamicAbilityTags.HasTagExact(InputTag)) continue;
@@ -29,7 +29,7 @@ void UBaseAbilitySystemComponent::OnAbilityInputReleased(const FGameplayTag& Inp
         return;
     }
 
-    //ÁÖÀÔÇÑ ½ºÆåÀ¸·Î ÀÔ·Â ½ÇÇà
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½
     for (const FGameplayAbilitySpec& Spec : GetActivatableAbilities())
     {
         if (Spec.DynamicAbilityTags.HasTagExact(InputTag))
@@ -85,10 +85,10 @@ bool UBaseAbilitySystemComponent::TryActivateAbilityByTag(FGameplayTag Tag)
     check(Tag.IsValid());
 
     TArray<FGameplayAbilitySpec*> AbilitySpecs;
-    //ÀÌ ÇÔ¼ö´Â È°¼ºÈ­ °¡´ÉÇÑ ¸ðµç °ÔÀÓ ¾îºô¸®Æ¼ ½ºÆåÀ» °¡Á®¿Â´Ù.
+    //ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â´ï¿½.
     GetActivatableGameplayAbilitySpecsByAllMatchingTags(Tag.GetSingleTagContainer(), AbilitySpecs);
 
-    //AbilitySpecs ¹è¿­¿¡ ¹ÞÀº µ¥ÀÌÅÍ°¡ ÀÖÀ¸¸é
+    //AbilitySpecs ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     if (!AbilitySpecs.IsEmpty())
     {
         const int32 RandomAbilityIndex = FMath::RandRange(0, AbilitySpecs.Num() - 1);

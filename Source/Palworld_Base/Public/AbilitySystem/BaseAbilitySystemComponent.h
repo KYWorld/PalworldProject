@@ -19,6 +19,7 @@ class PALWORLD_BASE_API UBaseAbilitySystemComponent : public UAbilitySystemCompo
 
 public:
 	void OnAbilityInputPressed(const FGameplayTag& InputTag);
+	UFUNCTION(BlueprintCallable, Category = "Ability")
 	void OnAbilityInputReleased(const FGameplayTag& InputTag);
 
 	UFUNCTION(BlueprintCallable, Category = "Ability", meta = (Level = "1"))
