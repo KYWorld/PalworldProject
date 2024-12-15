@@ -197,6 +197,6 @@ USkeletalMeshComponent* APlayerCharacter::FindMeshComponent(EPlayerEquipmentType
 
 void APlayerCharacter::SetMeshComponent(EPlayerEquipmentType EquipmentType, USkeletalMesh* SkeletalMesh)
 {	
-	if(FindMeshComponent(EquipmentType))
-		FindMeshComponent(EquipmentType)->SetSkeletalMesh(SkeletalMesh);
+	if(USkeletalMeshComponent* SkeletalMeshComponent = FindMeshComponent(EquipmentType))
+		SkeletalMeshComponent->SetSkeletalMesh(SkeletalMesh);
 }
