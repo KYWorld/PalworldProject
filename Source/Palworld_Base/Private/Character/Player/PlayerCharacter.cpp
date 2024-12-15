@@ -47,7 +47,7 @@ APlayerCharacter::APlayerCharacter()
 	//캐릭터 메쉬 세팅
 	//USkeletalMeshComponent* Outfit; //= CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Outfit"));
 	//Outfit = GetMesh();
-	CharacterEquipmentMap.Add(EPlayerEquipmentType::Outfit, GetMesh());
+	//CharacterEquipmentMap.Add(EPlayerEquipmentType::Outfit, GetMesh());
 
 	USkeletalMeshComponent* Hair = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Hair"));
 	Hair->SetupAttachment(GetMesh());
@@ -60,6 +60,10 @@ APlayerCharacter::APlayerCharacter()
 	USkeletalMeshComponent* HeadEquip = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("HeadEquip"));
 	HeadEquip->SetupAttachment(GetMesh());
 	CharacterEquipmentMap.Add(EPlayerEquipmentType::HeadEquip, HeadEquip);
+
+	USkeletalMeshComponent* Outfit = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Outfit"));
+	Outfit->SetupAttachment(GetMesh());
+	CharacterEquipmentMap.Add(EPlayerEquipmentType::Outfit, Outfit);
 
 	USkeletalMeshComponent* Weapon = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Weapon"));
 	Weapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_Weapon_R"));
@@ -185,10 +189,14 @@ void APlayerCharacter::SetPlayerRotateToMovement(bool Value)
 
 USkeletalMeshComponent* APlayerCharacter::FindMeshComponent(EPlayerEquipmentType EquipmentType)
 {
-	return  *CharacterEquipmentMap.Find(EquipmentType);
+	if (EquipmentType == EPlayerEquipmentType::Null)
+		return nullptr;
+	
+	return *CharacterEquipmentMap.Find(EquipmentType);
 }
 
 void APlayerCharacter::SetMeshComponent(EPlayerEquipmentType EquipmentType, USkeletalMesh* SkeletalMesh)
-{
-	FindMeshComponent(EquipmentType)->SetSkeletalMesh(SkeletalMesh);
+{	
+	if(FindMeshComponent(EquipmentType))
+		FindMeshComponent(EquipmentType)->SetSkeletalMesh(SkeletalMesh);
 }

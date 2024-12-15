@@ -32,4 +32,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Ability")
 	void TryCancelAbilityByTag(FGameplayTag Tag);
+
+	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Ability", meta = (AllowPrivateAccess = "true"))
+	TArray<FGameplayAbilitySpecHandle> RecentGrantedAbilitySpecHandles;
 };
