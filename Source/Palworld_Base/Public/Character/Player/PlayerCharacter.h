@@ -12,6 +12,7 @@ class UCameraComponent;
 class UDataAsset_InputConfig;
 class UPawnEquipmentComponent;
 class AEquipmentBase;
+class UInputMappingContext;
 
 struct FInputActionValue;
 
@@ -105,4 +106,7 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Movement", meta = (AllowPrivateAccess = "true"))
 	bool bIsGliding;
+
+	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Ability", meta = (AllowPrivateAccess = "true"))
+	UInputMappingContext* RecentInputMappingContext;
 };
