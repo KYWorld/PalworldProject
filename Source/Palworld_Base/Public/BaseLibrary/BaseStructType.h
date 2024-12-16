@@ -70,6 +70,9 @@ struct FPlayerWeaponData
     TSubclassOf<UPlayerAnimInstance> WeaponAnimLayerToLink;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+    UAnimMontage* EquipAnimMontage;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
     UInputMappingContext* WeaponInputMappingContext;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (TitleProperty = "InputTag"))

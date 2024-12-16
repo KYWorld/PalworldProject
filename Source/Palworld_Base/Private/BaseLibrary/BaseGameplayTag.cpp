@@ -14,6 +14,8 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Roll, "InputTag.Roll");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Attack, "InputTag.Attack");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Crouch, "InputTag.Crouch");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_WeaponSwap_Up, "InputTag.WeaponSwap.Up");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_WeaponSwap_Down, "InputTag.WeaponSwap.Down");
 
     // Input Build Tags
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Build, "InputTag.Build");
