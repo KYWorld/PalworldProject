@@ -29,6 +29,8 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_RotateMesh, "InputTag.RotateMesh");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_OppositeRotateMesh, "InputTag.OppositeRotateMesh");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Destroy, "InputTag.Destroy");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_PalInteract, "InputTag.PalInteract");
+	
 	
 
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Equip, "InputTag.Equip");
