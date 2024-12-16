@@ -36,4 +36,14 @@ public:
 
 	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Ability", meta = (AllowPrivateAccess = "true"))
 	TArray<FGameplayAbilitySpecHandle> RecentGrantedAbilitySpecHandles;
+
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Ability", meta = (AllowPrivateAccess = "true"))
+	bool bCancelInputReleased = true;
+
+
+	UFUNCTION(BlueprintCallable, Category = "Ability")
+	void SetbCancelInputReleased(bool _bCancelInputReleased);
+
+
 };

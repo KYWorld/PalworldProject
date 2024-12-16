@@ -30,11 +30,14 @@ void UBaseAbilitySystemComponent::OnAbilityInputReleased(const FGameplayTag& Inp
     }
 
     //������ �������� �Է� ����
-    for (const FGameplayAbilitySpec& Spec : GetActivatableAbilities())
+    if (bCancelInputReleased == true)
     {
-        if (Spec.DynamicAbilityTags.HasTagExact(InputTag))
+        for (const FGameplayAbilitySpec& Spec : GetActivatableAbilities())
         {
-            CancelAbilityHandle(Spec.Handle);
+            if (Spec.DynamicAbilityTags.HasTagExact(InputTag))
+            {
+                CancelAbilityHandle(Spec.Handle);
+            }
         }
     }
 }
@@ -110,4 +113,9 @@ void UBaseAbilitySystemComponent::TryCancelAbilityByTag(FGameplayTag Tag)
     check(Tag.IsValid());
     FGameplayTagContainer GameplayTagContainer = Tag.GetSingleTagContainer();
     CancelAbilities(&GameplayTagContainer);
+}
+
+void UBaseAbilitySystemComponent::SetbCancelInputReleased(bool _bCancelInputReleased)
+{
+    bCancelInputReleased = _bCancelInputReleased;
 }
