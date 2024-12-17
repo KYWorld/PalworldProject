@@ -35,27 +35,28 @@ namespace BaseGamePlayTag
 	
 	
 
-	UE_DEFINE_GAMEPLAY_TAG(InputTag_Equip, "InputTag.Equip");
-	UE_DEFINE_GAMEPLAY_TAG(InputTag_Unequip, "InputTag.Unequip");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_MeleeAttack, "InputTag.MeleeAttack");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_ReadyToThrow, "InputTag.ReadyToThrow");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_ThrowAction, "InputTag.ThrowAction");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Aim, "InputTag.Aim");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_ShootingArrow, "InputTag.ShootingArrow");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Gliding, "InputTag.Gliding");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_ShootingHandgun, "InputTag.ShootingHandgun");
+
+
 
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Run, "Player.Ability.Run");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Jump, "Player.Ability.Jump");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Roll, "Player.Ability.Roll");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Attack, "Player.Ability.Attack");
-	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Equip_Axe, "Player.Ability.Equip.Axe");
-	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Unquip_Axe, "Player.Ability.Unquip.Axe");
+
+
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Equip_PalSphere, "Player.Ability.Equip.PalSphere");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Unquip_PalSphere, "Player.Ability.Unquip.PalSphere");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_ReadyToThrow_PalSphere, "Player.Ability.ReadyToThrow.PalSphere");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_ThrowAction_PalSphere, "Player.Ability.ThrowAction.PalSphere");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Aim, "Player.Ability.Aim");
-
+	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_ShootingHandgun, "Player.Ability.ShootingHandgun");
 
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_MeleeAttack, "Player.Ability.MeleeAttack");
 
@@ -65,12 +66,11 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(Player_Weapon_Bow, "Player.Weapon.Bow");
 
 
-	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Equipment_Equip, "Player.Event.Equipment.Equip");
-	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Equipment_Unquip, "Player.Event.Equipment.Unquip");
+
 
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Equipment_Throw, "Player.Event.Equipment.Throw");
-
-
+	UE_DEFINE_GAMEPLAY_TAG(Player_Event_CoolTime_ShootingBow, "Player.Event.CoolTime.ShootingBow");
+	UE_DEFINE_GAMEPLAY_TAG(Player_Event_CoolTime_Gliding, "Player.Event.CoolTime.Gliding");
 
 
 
