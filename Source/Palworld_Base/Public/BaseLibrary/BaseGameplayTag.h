@@ -74,6 +74,9 @@ namespace BaseGamePlayTag
 
 
 
+	PALWORLD_BASE_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(Shared_Event_HitReact);
+
+
 
 
 
