@@ -72,6 +72,10 @@ namespace BaseGamePlayTag
 
 
 
+	UE_DEFINE_GAMEPLAY_TAG(Shared_Event_HitReact, "Shared.Event.HitReact");
+
+
+
 
 
 
