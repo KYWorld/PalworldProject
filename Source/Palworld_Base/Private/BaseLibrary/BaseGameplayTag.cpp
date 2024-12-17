@@ -42,7 +42,7 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_ShootingArrow, "InputTag.ShootingArrow");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Gliding, "InputTag.Gliding");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_ShootingHandgun, "InputTag.ShootingHandgun");
-
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_Aim_Shooting, "InputTag.Aim.Shooting");
 
 
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Run, "Player.Ability.Run");
