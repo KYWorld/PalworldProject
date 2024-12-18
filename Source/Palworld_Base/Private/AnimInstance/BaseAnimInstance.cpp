@@ -39,6 +39,10 @@ void UBaseAnimInstance::NativeThreadSafeUpdateAnimation(float DeltaSeconds)
     bIsCrouching = OwningMovementComponent->IsCrouching();
     bIsSwimming = OwningMovementComponent->IsSwimming();
 
+    //OwningMovementComponent->GetMovementBase
+
+    MovementMode = OwningMovementComponent->MovementMode;
+
     LocomotionDirection = UKismetAnimationLibrary::CalculateDirection(OwningCharacter->GetVelocity(), OwningCharacter->GetActorRotation());
 
     
