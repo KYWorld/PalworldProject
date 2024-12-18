@@ -109,4 +109,8 @@ public:
 
 	UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Ability", meta = (AllowPrivateAccess = "true"))
 	UInputMappingContext* RecentInputMappingContext;
+
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Movement", meta = (AllowPrivateAccess = "true"))
+	bool bIsGunAiming;
 };

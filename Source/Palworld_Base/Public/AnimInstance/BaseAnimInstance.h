@@ -9,6 +9,7 @@
 
 class ABaseCharacter;
 class UCharacterMovementComponent;
+//enum class EMovementMode : int;
 
 /**
  * 
@@ -59,6 +60,10 @@ protected:
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Locomotion")
 	float Pitch;
+
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Locomotion")
+	TEnumAsByte<EMovementMode> MovementMode;
+	
 
 protected:
 	UFUNCTION(BlueprintPure, meta = (BlueprintThreadSafe))

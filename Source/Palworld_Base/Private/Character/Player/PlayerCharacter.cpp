@@ -24,27 +24,27 @@
 
 APlayerCharacter::APlayerCharacter()
 {
-	//Ä¸½¶ÄÄÆ÷³ÍÆ® ÃÊ±â»çÀÌÁî ¼¼ÆÃ
+	//Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.f);
 
-	//È¸Àü »ç¿ë ºñÈ°¼ºÈ­
+	//È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
 	bUseControllerRotationYaw = false;
 
-	//½ºÇÁ¸µ¾Ï ÃÊ±â¼¼ÆÃ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±â¼¼ï¿½ï¿½
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(GetRootComponent());
 	CameraBoom->TargetArmLength = 200.0f;
 	CameraBoom->SocketOffset = FVector(0.f, 55.f, 65.f);
 	CameraBoom->bUsePawnControlRotation = true;
 
-	//Ä«¸Þ¶ó ÃÊ±â¼¼ÆÃ
+	//Ä«ï¿½Þ¶ï¿½ ï¿½Ê±â¼¼ï¿½ï¿½
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
 
-	//Ä³¸¯ÅÍ ¸Þ½¬ ¼¼ÆÃ
+	//Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	//USkeletalMeshComponent* Outfit; //= CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Outfit"));
 	//Outfit = GetMesh();
 	//CharacterEquipmentMap.Add(EPlayerEquipmentType::Outfit, GetMesh());
@@ -82,16 +82,16 @@ APlayerCharacter::APlayerCharacter()
 	CharacterEquipmentMap.Add(EPlayerEquipmentType::BackWeapon3, BackWeapon3);
 
 
-	//ÄÉ¸¯ÅÍ¿òÁ÷ÀÓ ÃÊ±â¼¼ÆÃ
+	//ï¿½É¸ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±â¼¼ï¿½ï¿½
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.f, 500.f, 0.f);
 	GetCharacterMovement()->MaxWalkSpeed = 400.0f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.0f;
-	GetCharacterMovement()->JumpZVelocity = 500.0f; // Á¡ÇÁ ³ôÀÌ.
-	//GetCharacterMovement()->bCanCrouch = True; // Á¡ÇÁ ³ôÀÌ.
-	JumpMaxCount = 1; // ÇÑ¹ø¿¡ Á¡ÇÁ °¡´ÉÇÑ È½¼ö. 1ÀÌ ±âº» °ª
+	GetCharacterMovement()->JumpZVelocity = 500.0f; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+	//GetCharacterMovement()->bCanCrouch = True; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+	JumpMaxCount = 1; // ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È½ï¿½ï¿½. 1ï¿½ï¿½ ï¿½âº» ï¿½ï¿½
 
-	//CombatComponent ¼¼ÆÃ
+	//CombatComponent ï¿½ï¿½ï¿½ï¿½
 	PlayerEquipmentComponent = CreateDefaultSubobject<UPawnEquipmentComponent>(TEXT("PlayerEquipmentComponent"));
 }
 
@@ -174,7 +174,7 @@ void APlayerCharacter::PossessedBy(AController* NewController)
 	{
 		if (UDataAsset_StartupBase* LoadedData = StartupData.LoadSynchronous())
 		{
-			//Startupµ¥ÀÌÅÍ°¡ NullÀÌ ¾Æ´Ñ°æ¿ì StartupData´Â µ¿±âÈ­·Îµå¸¦ °ÅÃÄ¼­ ÃÖÁ¾ÀûÀ¸·Î °ÔÀÓ¾îºô¸®Æ¼½Ã½ºÅÛÀÌ ¹ßµ¿µÈ´Ù. GA_HeroSpawnAxe
+			//Startupï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ Nullï¿½ï¿½ ï¿½Æ´Ñ°ï¿½ï¿½ StartupDataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­ï¿½Îµå¸¦ ï¿½ï¿½ï¿½Ä¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó¾ï¿½ï¿½ï¿½Æ¼ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ßµï¿½ï¿½È´ï¿½. GA_HeroSpawnAxe
 			LoadedData->GiveToAbilitySystemComponent(GetBaseAbilitySystemComponent());
 		}
 	}
