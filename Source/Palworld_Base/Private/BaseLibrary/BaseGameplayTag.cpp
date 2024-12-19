@@ -34,6 +34,8 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Destroy, "InputTag.Destroy");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_PalInteract, "InputTag.PalInteract");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_PalInOut, "InputTag.PalInOut");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_PalSwapUp, "InputTag.PalSwapUp");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_PalSwapDown, "InputTag.PalSwapDown");
 	
 	
 

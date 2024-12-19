@@ -44,4 +44,10 @@ public:
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Movement", meta = (AllowPrivateAccess = "true"))
     bool bIsAiming;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Activate", meta = (AllowPrivateAccess = "true"))
+    bool bIsActivate = true;
+
+    UFUNCTION(BlueprintCallable, Category = "Activate")
+    void SetActivate(bool IsActivate);
 };
