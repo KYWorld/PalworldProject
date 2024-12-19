@@ -42,5 +42,7 @@ void ABaseCharacter::SetActivate(bool IsActivate)
 	bIsActivate = IsActivate;
 
 	SetActorHiddenInGame(!IsActivate);
-	SetActorEnableCollision(bIsActivate);
+	SetActorEnableCollision(IsActivate);
+
+	
 }
