@@ -4,6 +4,7 @@
 #include "Character/Player/PlayerCharacter.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Components/ActorComponent.h"
 
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
@@ -200,4 +201,13 @@ void APlayerCharacter::SetMeshComponent(EPlayerEquipmentType EquipmentType, USke
 {	
 	if(USkeletalMeshComponent* SkeletalMeshComponent = FindMeshComponent(EquipmentType))
 		SkeletalMeshComponent->SetSkeletalMesh(SkeletalMesh);
+}
+
+void APlayerCharacter::DestroyBuildComponent(UActorComponent* Component)
+{
+    if (Component) // Component가 유효한지 확인
+    {
+        Component->DestroyComponent(); // 컴포넌트를 제거
+        Component = nullptr; // 포인터 초기화
+    }
 }
