@@ -100,6 +100,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Mesh")
 	void SetMeshComponent(EPlayerEquipmentType EquipmentType, USkeletalMesh* SkeletalMesh);
 
+    UFUNCTION(BlueprintCallable, Category = "Building")
+    void DestroyBuildComponent(UActorComponent* Component);
+
 public:
 	FORCEINLINE UPawnEquipmentComponent* GetPlayerEquipmentComponent() const { return PlayerEquipmentComponent; }
 

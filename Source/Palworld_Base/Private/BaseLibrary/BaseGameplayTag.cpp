@@ -23,6 +23,7 @@ namespace BaseGamePlayTag
 
     // Input Build Tags
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Build, "InputTag.Build");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_BuildMenu, "InputTag.BuildMenu");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_PlaceBuild, "InputTag.PlaceBuild");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_ContinuousBuild, "InputTag.ContinuousBuild");
 
