@@ -16,6 +16,10 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Crouch, "InputTag.Crouch");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_WeaponSwap_Up, "InputTag.WeaponSwap.Up");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_WeaponSwap_Down, "InputTag.WeaponSwap.Down");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_Flying_Up, "InputTag.Flying.Up");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_Flying_Down, "InputTag.Flying.Down");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_Flying_Move, "InputTag.Flying.Move");
+
 
     // Input Build Tags
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Build, "InputTag.Build");

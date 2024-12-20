@@ -133,6 +133,7 @@ void APlayerCharacter::Input_Move(const FInputActionValue& InputActionValue)
 		const FVector RightDirection = MovementRotation.RotateVector(FVector::RightVector);
 		AddMovementInput(RightDirection, MovementVector.X);
 	}
+	
 }
 
 void APlayerCharacter::Input_Look(const FInputActionValue& InputActionValue)
