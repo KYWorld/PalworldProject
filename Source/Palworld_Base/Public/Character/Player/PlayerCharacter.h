@@ -116,4 +116,8 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Movement", meta = (AllowPrivateAccess = "true"))
 	bool bIsGunAiming;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Movement", meta = (AllowPrivateAccess = "true"))
+	bool bIsAttachToRiding = false;
+
 };
