@@ -3,3 +3,12 @@
 
 #include "Controller/BasePlayerController.h"
 
+ABasePlayerController::ABasePlayerController()
+{
+    PlayerTeamId = FGenericTeamId(0);
+}
+
+FGenericTeamId ABasePlayerController::GetGenericTeamId() const
+{
+    return PlayerTeamId;
+}
