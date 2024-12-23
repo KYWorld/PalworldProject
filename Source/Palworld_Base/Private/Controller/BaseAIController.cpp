@@ -23,43 +23,30 @@ ABaseAIController::ABaseAIController(const FObjectInitializer& ObjectInitializer
 
 	AISenseConfig_Sight = CreateDefaultSubobject<UAISenseConfig_Sight>(TEXT("AISenseConfig_Sight"));
 
-	//적감지
+	////적감지
 	AISenseConfig_Sight->DetectionByAffiliation.bDetectEnemies = true;
 
-	//아군감지
+	////아군감지
 	AISenseConfig_Sight->DetectionByAffiliation.bDetectFriendlies = false;
 
-	//중립감지
+	////중립감지
 	AISenseConfig_Sight->DetectionByAffiliation.bDetectNeutrals = false;
 
-	//시야 설정, 대상을 잃는 시야범위 설정
+	////시야 설정, 대상을 잃는 시야범위 설정
 	AISenseConfig_Sight->SightRadius = 5000.f;
 	AISenseConfig_Sight->LoseSightRadius = 0.f;
 
-	//주변 시야각
-	AISenseConfig_Sight->PeripheralVisionAngleDegrees = 360.f;
+	////주변 시야각
+	//AISenseConfig_Sight->PeripheralVisionAngleDegrees = 120.f;
 
 	AIPerceptionComponent = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("AIPerceptionComponent"));
 
 	//센서 설정
 	AIPerceptionComponent->ConfigureSense(*AISenseConfig_Sight);
 	AIPerceptionComponent->SetDominantSense(UAISenseConfig_Sight::StaticClass());
-	AIPerceptionComponent->OnTargetPerceptionUpdated.AddUniqueDynamic(this, &ABaseAIController::OnEnemyPerceptionUpdated);
+	//AIPerceptionComponent->OnTargetPerceptionUpdated.AddUniqueDynamic(this, &ABaseAIController::OnEnemyPerceptionUpdated);
 
-}
-
-void ABaseAIController::OnEnemyPerceptionUpdated(AActor* Actor, FAIStimulus Stimulus)
-{
-	if (UBlackboardComponent* BlackboardComponent = GetBlackboardComponent())
-	{
-		if (!BlackboardComponent->GetValueAsObject(FName("TargetActor")))
-		{
-			if (Stimulus.WasSuccessfullySensed() && Actor)
-			{
-				BlackboardComponent->SetValueAsObject(FName("TargetActor"), Actor);
-			}
-		}
-	}
+	SetTeamId(FGenericTeamId(1));
 }
 
 ETeamAttitude::Type ABaseAIController::GetTeamAttitudeTowards(const AActor& Other) const
