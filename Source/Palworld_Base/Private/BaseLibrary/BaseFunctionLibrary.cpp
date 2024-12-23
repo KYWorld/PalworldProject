@@ -5,7 +5,7 @@
 #include "AbilitySystem/BaseAbilitySystemComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"
 //#include "Interfaces/PawnCombatInterface.h" 
-// ±¸ÇöÇØ¾ßÇÔ
+// ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½
 
 UBaseAbilitySystemComponent* UBaseFunctionLibrary::NativeGetBaseAbilitySystemComponentFromActor(AActor* Actor)
 {

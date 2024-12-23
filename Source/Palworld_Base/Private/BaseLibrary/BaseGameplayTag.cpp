@@ -52,6 +52,10 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_ShootingHandgun, "InputTag.ShootingHandgun");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Aim_Shooting, "InputTag.Aim.Shooting");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Test, "InputTag.Test");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_Reload, "InputTag.Reload");
+
+
+
 
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Run, "Player.Ability.Run");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Jump, "Player.Ability.Jump");
@@ -65,6 +69,9 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_ThrowAction_PalSphere, "Player.Ability.ThrowAction.PalSphere");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Aim, "Player.Ability.Aim");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_ShootingHandgun, "Player.Ability.ShootingHandgun");
+	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_ReadyToFlying, "Player.Ability.ReadyToFlying");
+	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_AttachToFlying, "Player.Ability.AttachToFlying");
+	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_DettachToFlying, "Player.Ability.DettachToFlying");
 
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_MeleeAttack, "Player.Ability.MeleeAttack");
 
