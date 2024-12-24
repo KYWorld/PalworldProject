@@ -120,4 +120,8 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Movement", meta = (AllowPrivateAccess = "true"))
 	bool bIsAttachToRiding = false;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Ammo", meta = (AllowPrivateAccess = "true"))
+	int32 CurrentMag;
+
+
 };
