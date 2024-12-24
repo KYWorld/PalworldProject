@@ -62,6 +62,9 @@ protected:
 	float Pitch;
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Locomotion")
+	float PalPitch;
+
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Locomotion")
 	TEnumAsByte<EMovementMode> MovementMode;
 	
 

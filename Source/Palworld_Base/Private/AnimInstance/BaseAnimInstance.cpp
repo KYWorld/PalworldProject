@@ -44,10 +44,12 @@ void UBaseAnimInstance::NativeThreadSafeUpdateAnimation(float DeltaSeconds)
     MovementMode = OwningMovementComponent->MovementMode;
 
     LocomotionDirection = UKismetAnimationLibrary::CalculateDirection(OwningCharacter->GetVelocity(), OwningCharacter->GetActorRotation());
-
-    
+        
     FRotator DeltaRotator = UKismetMathLibrary::NormalizedDeltaRotator(OwningCharacter->GetActorRotation(), OwningCharacter->GetBaseAimRotation());
     Pitch = DeltaRotator.Pitch;
+
+    //PalPitch = OwningCharacter->LookRotation.Yaw;
+    PalPitch = UKismetMathLibrary::Clamp(OwningCharacter->LookRotation.Yaw, -90.f, 90.f);
 
     bIsAiming = OwningCharacter->bIsAiming;
 }

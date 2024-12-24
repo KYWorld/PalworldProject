@@ -45,6 +45,9 @@ public:
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Movement", meta = (AllowPrivateAccess = "true"))
     bool bIsAiming;
 
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Movement", meta = (AllowPrivateAccess = "true"))
+    FRotator LookRotation;
+
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Activate", meta = (AllowPrivateAccess = "true"))
     bool bIsActivate = true;
 
