@@ -21,20 +21,20 @@ ABaseAIController::ABaseAIController(const FObjectInitializer& ObjectInitializer
 		//Debug::Print(TEXT("CrowdFollowingComponent vaild"), FColor::Green);
 	}
 
-	AISenseConfig_Sight = CreateDefaultSubobject<UAISenseConfig_Sight>(TEXT("AISenseConfig_Sight"));
+	//AISenseConfig_Sight = CreateDefaultSubobject<UAISenseConfig_Sight>(TEXT("AISenseConfig_Sight"));
 
 	////적감지
-	AISenseConfig_Sight->DetectionByAffiliation.bDetectEnemies = true;
+	//AISenseConfig_Sight->DetectionByAffiliation.bDetectEnemies = true;
 
 	////아군감지
-	AISenseConfig_Sight->DetectionByAffiliation.bDetectFriendlies = false;
+	//AISenseConfig_Sight->DetectionByAffiliation.bDetectFriendlies = false;
 
 	////중립감지
-	AISenseConfig_Sight->DetectionByAffiliation.bDetectNeutrals = false;
+	//AISenseConfig_Sight->DetectionByAffiliation.bDetectNeutrals = false;
 
 	////시야 설정, 대상을 잃는 시야범위 설정
-	AISenseConfig_Sight->SightRadius = 5000.f;
-	AISenseConfig_Sight->LoseSightRadius = 0.f;
+	//AISenseConfig_Sight->SightRadius = 5000.f;
+	//AISenseConfig_Sight->LoseSightRadius = 0.f;
 
 	////주변 시야각
 	//AISenseConfig_Sight->PeripheralVisionAngleDegrees = 120.f;
@@ -42,9 +42,8 @@ ABaseAIController::ABaseAIController(const FObjectInitializer& ObjectInitializer
 	AIPerceptionComponent = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("AIPerceptionComponent"));
 
 	//센서 설정
-	AIPerceptionComponent->ConfigureSense(*AISenseConfig_Sight);
-	AIPerceptionComponent->SetDominantSense(UAISenseConfig_Sight::StaticClass());
-	//AIPerceptionComponent->OnTargetPerceptionUpdated.AddUniqueDynamic(this, &ABaseAIController::OnEnemyPerceptionUpdated);
+	//AIPerceptionComponent->ConfigureSense(*AISenseConfig_Sight);
+	//AIPerceptionComponent->SetDominantSense(UAISenseConfig_Sight::StaticClass());
 
 	SetTeamId(FGenericTeamId(1));
 }

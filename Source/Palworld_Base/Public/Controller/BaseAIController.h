@@ -31,8 +31,8 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UAIPerceptionComponent* AIPerceptionComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	UAISenseConfig_Sight* AISenseConfig_Sight;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	//UAISenseConfig_Sight* AISenseConfig_Sight;
 
 private:
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
