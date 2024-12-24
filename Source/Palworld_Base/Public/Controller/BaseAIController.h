@@ -23,8 +23,6 @@ public:
 	ABaseAIController(const FObjectInitializer& ObjectInitializer);
 
 protected:
-	UFUNCTION()
-	void OnEnemyPerceptionUpdated(AActor* Actor, FAIStimulus Stimulus);
 
 	virtual ETeamAttitude::Type GetTeamAttitudeTowards(const AActor& Other) const override;
 
