@@ -7,6 +7,7 @@
 #include "PalGameplayAbility.generated.h"
 
 class APalCharacterBase;
+class ABaseAIController;
 /**
  * 
  */
@@ -19,6 +20,10 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Ability")
 	APalCharacterBase* GetPalCharacterFromActorInfo();
 
+	UFUNCTION(BlueprintPure, Category = "Ability")
+	ABaseAIController* GetPalAIControllerFromActorInfo();
+
 private:
 	TWeakObjectPtr<APalCharacterBase> CachedPalCharacter;
+	TWeakObjectPtr<ABaseAIController> CachedPalAIController;
 };
