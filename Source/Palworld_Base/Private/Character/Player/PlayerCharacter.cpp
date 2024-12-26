@@ -13,6 +13,7 @@
 #include "Component/Input/BaseInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "DataAsset/Input/DataAsset_InputConfig.h"
+#include "Character/Pal/PalCharacterBase.h"
 
 #include "BaseLibrary/BaseGamePlayTag.h"
 #include "AbilitySystem/BaseAbilitySystemComponent.h"
@@ -116,6 +117,7 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	UBaseInputComponent* BaseInputComponent = CastChecked<UBaseInputComponent>(PlayerInputComponent);
 	BaseInputComponent->BindNativeInputAction(InputConfigDataAsset, BaseGamePlayTag::InputTag_Move, ETriggerEvent::Triggered, this, &APlayerCharacter::Input_Move);
 	BaseInputComponent->BindNativeInputAction(InputConfigDataAsset, BaseGamePlayTag::InputTag_Look, ETriggerEvent::Triggered, this, &APlayerCharacter::Input_Look);
+	BaseInputComponent->BindNativeInputAction(InputConfigDataAsset, BaseGamePlayTag::InputTag_Flying_Move, ETriggerEvent::Triggered, this, &APlayerCharacter::Input_FlyMove);
 
 	BaseInputComponent->BindAbilityInputAction(InputConfigDataAsset, this, &APlayerCharacter::Input_AbilityInputPressed, &APlayerCharacter::Input_AbilityInputReleased);
 }
@@ -211,3 +213,28 @@ void APlayerCharacter::DestroyBuildComponent(UActorComponent* Component)
         Component = nullptr; // 포인터 초기화
     }
 }
+
+void APlayerCharacter::Input_FlyMove(const FInputActionValue& InputActionValue)
+{
+	const FVector2D MovementVector = InputActionValue.Get<FVector2D>();
+	const FRotator MovementRotation(0.f, Controller->GetControlRotation().Yaw, 0.f);
+
+	if (CurrentPalCharacter)
+	{
+
+		if (MovementVector.Y != 0.f)
+		{
+			const FVector ForwardDirection = MovementRotation.RotateVector(FVector::ForwardVector);
+			CurrentPalCharacter->AddMovementInput(ForwardDirection, MovementVector.Y);
+		}
+		if (MovementVector.X != 0.f)
+		{
+			const FVector RightDirection = MovementRotation.RotateVector(FVector::RightVector);
+			CurrentPalCharacter->AddMovementInput(RightDirection, MovementVector.X);
+		}
+	}
+}
+
+
+
+
