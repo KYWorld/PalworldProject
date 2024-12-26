@@ -4,6 +4,7 @@
 #include "AbilitySystem/Ability/PalGameplayAbility.h"
 #include "Character/Pal/PalCharacterBase.h"
 #include "AbilitySystem/BaseAbilitySystemComponent.h"
+#include "Controller/BaseAIController.h"
 #include "BaseLibrary/BaseGameplayTag.h"
 
 APalCharacterBase* UPalGameplayAbility::GetPalCharacterFromActorInfo()
@@ -14,4 +15,14 @@ APalCharacterBase* UPalGameplayAbility::GetPalCharacterFromActorInfo()
     }
 
     return CachedPalCharacter.IsValid() ? CachedPalCharacter.Get() : nullptr;
+}
+
+ABaseAIController* UPalGameplayAbility::GetPalAIControllerFromActorInfo()
+{
+    if (!CachedPalAIController.IsValid())
+    {
+        CachedPalAIController = Cast<ABaseAIController>(CurrentActorInfo->PlayerController);
+    }
+
+    return CachedPalAIController.IsValid() ? CachedPalAIController.Get() : nullptr;
 }
