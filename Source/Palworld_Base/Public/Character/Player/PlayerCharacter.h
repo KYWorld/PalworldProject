@@ -13,6 +13,8 @@ class UDataAsset_InputConfig;
 class UPawnEquipmentComponent;
 class AEquipmentBase;
 class UInputMappingContext;
+class UInputAction;
+class APalCharacterBase;
 
 struct FInputActionValue;
 
@@ -124,4 +126,13 @@ public:
 	int32 CurrentMag;
 
 
+	//UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Input", meta = (AllowPrivateAccess = "true"))
+	//UInputAction* FlyMoveAction;
+
+
+	UFUNCTION(BlueprintCallable, Category = "Movement")
+	void Input_FlyMove(const FInputActionValue& InputActionValue);
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Pal", meta = (AllowPrivateAccess = "true"))
+	APalCharacterBase* CurrentPalCharacter;
 };

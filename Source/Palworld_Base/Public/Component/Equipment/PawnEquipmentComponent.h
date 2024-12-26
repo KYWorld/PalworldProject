@@ -62,6 +62,8 @@ public:
     UFUNCTION(BlueprintCallable, Category = "Player")
     void SetSpawnedEquipment(AEquipmentBase* _SpawnedEquipment);
 
+    UPROPERTY(BlueprintReadWrite, Category = "Player")
+    TArray<FGameplayAbilitySpecHandle> SpecHandles;
 
 protected:
     TArray<AActor*> OverlappedActors;
