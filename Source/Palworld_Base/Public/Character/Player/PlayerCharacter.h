@@ -135,4 +135,8 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Pal", meta = (AllowPrivateAccess = "true"))
 	APalCharacterBase* CurrentPalCharacter;
+
+
+
+
 };

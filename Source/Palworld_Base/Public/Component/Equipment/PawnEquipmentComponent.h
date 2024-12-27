@@ -65,6 +65,11 @@ public:
     UPROPERTY(BlueprintReadWrite, Category = "Player")
     TArray<FGameplayAbilitySpecHandle> SpecHandles;
 
+
+    UPROPERTY(BlueprintReadWrite, Category = "Player")
+    AEquipmentBase* CurrentWeapon;
+
+
 protected:
     TArray<AActor*> OverlappedActors;
 
