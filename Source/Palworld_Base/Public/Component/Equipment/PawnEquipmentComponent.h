@@ -71,6 +71,10 @@ public:
     UFUNCTION(BlueprintCallable, Category = "Player")
     void DisableActor(AActor* Actor);
 
+
+    UFUNCTION(BlueprintCallable, Category = "Player")
+    void AbleActor(AActor* Actor);
+
 protected:
     TArray<AActor*> OverlappedActors;
 

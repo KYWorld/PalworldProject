@@ -105,7 +105,7 @@ void UPawnEquipmentComponent::DisableActor(AActor* Actor)
     // 2. Tick 비활성화
     Actor->SetActorTickEnabled(false);
 
-    // 4. 모든 컴포넌트의 콜리전 및 물리 비활성화
+    // 4. 모든 컴포넌트의 콜리전 비활성화 및 물리 활성화
     TSet<UActorComponent*> Components = Actor->GetComponents();
     for (UActorComponent* Component : Components)
     {
@@ -115,4 +115,27 @@ void UPawnEquipmentComponent::DisableActor(AActor* Actor)
             PrimitiveComponent->SetSimulatePhysics(false);
         }
     }
+}
+
+void UPawnEquipmentComponent::AbleActor(AActor* Actor)
+{
+    if (!Actor) return;
+
+    // 1. 콜리전 활성화
+    Actor->SetActorEnableCollision(true);
+
+    // 2. Tick 비활성화
+    Actor->SetActorTickEnabled(false);
+
+    // 4. 모든 컴포넌트의 콜리전 활성화 및 물리 비활성화
+    TSet<UActorComponent*> Components = Actor->GetComponents();
+    for (UActorComponent* Component : Components)
+    {
+        if (UPrimitiveComponent* PrimitiveComponent = Cast<UPrimitiveComponent>(Component))
+        {
+            PrimitiveComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+            PrimitiveComponent->SetSimulatePhysics(false);
+        }
+    }
+
 }
