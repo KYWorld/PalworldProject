@@ -81,8 +81,7 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(Player_Weapon_Bow, "Player.Weapon.Bow");
 
 
-
-
+	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Death, "Player.Event.Death");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Equipment_Throw, "Player.Event.Equipment.Throw");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_CoolTime_ShootingBow, "Player.Event.CoolTime.ShootingBow");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_CoolTime_Gliding, "Player.Event.CoolTime.Gliding");
