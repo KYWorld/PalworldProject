@@ -4,6 +4,8 @@
 #include "Component/Equipment/PawnEquipmentComponent.h"
 #include "Item/Equipment/EquipmentBase.h"
 #include "Components/BoxComponent.h"
+#include "Character/Pal/PalCharacterBase.h"
+
 
 void UPawnEquipmentComponent::RegisterSpawnedEquipment(FGameplayTag EquipmentTag, AEquipmentBase* Equipment, bool bRegisterAsEquippedEquipment)
 {
@@ -91,4 +93,26 @@ void UPawnEquipmentComponent::SetCachedEquippedEquipmentTag(FGameplayTag CachedT
 void UPawnEquipmentComponent::SetSpawnedEquipment(AEquipmentBase* _SpawnedEquipment)
 {
     SpawnedEquipment = _SpawnedEquipment;
+}
+
+void UPawnEquipmentComponent::DisableActor(AActor* Actor)
+{
+    if (!Actor) return;
+
+    // 1. 콜리전 비활성화
+    Actor->SetActorEnableCollision(false);
+
+    // 2. Tick 비활성화
+    Actor->SetActorTickEnabled(false);
+
+    // 4. 모든 컴포넌트의 콜리전 및 물리 비활성화
+    TSet<UActorComponent*> Components = Actor->GetComponents();
+    for (UActorComponent* Component : Components)
+    {
+        if (UPrimitiveComponent* PrimitiveComponent = Cast<UPrimitiveComponent>(Component))
+        {
+            PrimitiveComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+            PrimitiveComponent->SetSimulatePhysics(false);
+        }
+    }
 }

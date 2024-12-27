@@ -17,6 +17,7 @@ enum class EToggleDamageType : uint8
 
 class AEquipmentBase;
 class AWeaponBase;
+class APalCharacterBase;
 /**
  * 
  */
@@ -67,9 +68,8 @@ public:
     TArray<FGameplayAbilitySpecHandle> SpecHandles;
 
 
-    UPROPERTY(BlueprintReadWrite, Category = "Player")
-    AWeaponBase* CurrentWeapon;
-
+    UFUNCTION(BlueprintCallable, Category = "Player")
+    void DisableActor(AActor* Actor);
 
 protected:
     TArray<AActor*> OverlappedActors;
