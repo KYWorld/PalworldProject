@@ -5,6 +5,9 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/ActorComponent.h"
+#include "Components/SceneCaptureComponent2D.h"
+
+#include "Paper2D/Classes/PaperSpriteComponent.h"
 
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
@@ -46,6 +49,15 @@ APlayerCharacter::APlayerCharacter()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
 
+    // 미니맵 스프링암 장착
+    MiniMapSpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("MiniMapSpringArm"));
+    MiniMapSpringArm->SetupAttachment(GetRootComponent());
+    MiniMapSpringArm->TargetArmLength = 450.f;
+
+    // 미니맵 신캡쳐컴포넌트2D 장착
+    MiniMapSceneCaptureComponent2D = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("MiniMapSceneCaptureComponent2D"));
+    MiniMapSceneCaptureComponent2D->SetupAttachment(MiniMapSpringArm);
+
 	//ĳ���� �޽� ����
 	//USkeletalMeshComponent* Outfit; //= CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Outfit"));
 	//Outfit = GetMesh();
@@ -82,6 +94,10 @@ APlayerCharacter::APlayerCharacter()
 	USkeletalMeshComponent* BackWeapon3 = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BackWeapon3"));
 	BackWeapon3->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("Socket_BackWeapon_L"));
 	CharacterEquipmentMap.Add(EPlayerEquipmentType::BackWeapon3, BackWeapon3);
+
+    // 페이퍼 스프라이트 장착
+    PlayerIndicatorSprite = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("PlayerIndicatorSprite"));
+    PlayerIndicatorSprite->SetupAttachment(GetMesh());
 
 
 	//�ɸ��Ϳ����� �ʱ⼼��

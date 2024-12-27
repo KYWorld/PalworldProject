@@ -9,6 +9,8 @@
 
 class USpringArmComponent;
 class UCameraComponent;
+class USceneCaptureComponent2D;
+class UPaperSpriteComponent;
 class UDataAsset_InputConfig;
 class UPawnEquipmentComponent;
 class AEquipmentBase;
@@ -67,6 +69,15 @@ private:
 
 	UPROPERTY(VisibleAnyWhere, BlueprintReadOnly, category = "Equipment", meta = (AllowPrivateAccess = "true"))
 	UPawnEquipmentComponent* PlayerEquipmentComponent;
+
+    UPROPERTY(VisibleAnyWhere, BlueprintReadOnly, category = "MiniMap", meta = (AllowPrivateAccess = "true"))
+    USpringArmComponent* MiniMapSpringArm;
+
+    UPROPERTY(VisibleAnyWhere, BlueprintReadOnly, category = "MiniMap", meta = (AllowPrivateAccess = "true"))
+    USceneCaptureComponent2D* MiniMapSceneCaptureComponent2D;
+
+    UPROPERTY(VisibleAnyWhere, BlueprintReadOnly, category = "Sprite", meta = (AllowPrivateAccess = "true"))
+    UPaperSpriteComponent* PlayerIndicatorSprite;
 
 #pragma endregion
 
