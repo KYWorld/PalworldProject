@@ -53,19 +53,15 @@ ETeamAttitude::Type ABaseAIController::GetTeamAttitudeTowards(const AActor& Othe
 	const APawn* PawnCheck = Cast<const APawn>(&Other);
 	const IGenericTeamAgentInterface* OtherTeamAgent = Cast<IGenericTeamAgentInterface>(PawnCheck->GetController());
 	
-	Debug::Print(PawnCheck->GetName());
-
 	//EQS Test Pawn을 제외하고 Hero캐릭터만 체크하기위한 조건
 	if (OtherTeamAgent && OtherTeamAgent->GetGenericTeamId() != GetGenericTeamId())
 	{
 		// 팀아이디가 다르면 적으로 변경
 
-		UE_LOG(LogTemp, Warning, TEXT("Hostile"));
 		return ETeamAttitude::Hostile;
 	}
 
 	// 팀아이디가 같다면 아군으로
-	UE_LOG(LogTemp, Warning, TEXT("Friendly"));
 	return ETeamAttitude::Friendly;		
 }
 
