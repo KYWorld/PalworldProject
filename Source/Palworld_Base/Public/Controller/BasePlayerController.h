@@ -16,7 +16,17 @@ class PALWORLD_BASE_API ABasePlayerController : public APlayerController, public
 	GENERATED_BODY()
 
 public:
+    UPROPERTY(EditDefaultsOnly)
+    TSubclassOf<class UMiniMapWidget> W_MiniMap;
+
+private:
+    UPROPERTY()
+    class UMiniMapWidget* MiniMap;
+
+public:
 	ABasePlayerController();
+
+    virtual void BeginPlay() override;
 
 	virtual FGenericTeamId GetGenericTeamId() const override;
 
