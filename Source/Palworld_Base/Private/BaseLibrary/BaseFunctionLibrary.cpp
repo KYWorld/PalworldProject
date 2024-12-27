@@ -62,6 +62,8 @@ float UBaseFunctionLibrary::DefenseCulculation(float ResultDamage, float Defense
 {
 	float Result = ResultDamage - Defense;
 
+	Result = FMath::Clamp(Result, 1, Result);
+
 	float DamagedHp = CurrentHp - Result;
 
 	return DamagedHp;
