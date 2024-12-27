@@ -51,3 +51,18 @@ UPawnEquipmentComponent* UBaseFunctionLibrary::BP_GetUPawnEquipmentComponentFrom
 {
 	return nullptr;
 }
+
+float UBaseFunctionLibrary::DamageCulculation(float BasicDamage, float WeaponDamage)
+{
+	float Result = BasicDamage + WeaponDamage;
+	return Result;
+}
+
+float UBaseFunctionLibrary::DefenseCulculation(float ResultDamage, float Defense, float CurrentHp)
+{
+	float Result = ResultDamage - Defense;
+
+	float DamagedHp = CurrentHp - Result;
+
+	return DamagedHp;
+}

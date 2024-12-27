@@ -40,4 +40,11 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "FunctionLibary", meta = (Display = "Get UPawnEquipmentComponent From Actor", ExpandEnumAsExecs = "OutValidType"))
 	static UPawnEquipmentComponent* BP_GetUPawnEquipmentComponentFromActor(AActor* Actor, EBaseValidType& OutValidType);
+
+
+	UFUNCTION(BlueprintPure, Category = "FuntionLibary")
+	static float DamageCulculation(float BasicDamage, float WeaponDamage);
+
+	UFUNCTION(BlueprintPure, Category = "FuntionLibary")
+	static float DefenseCulculation(float ResultDamage, float Defense, float CurrentHp);
 };

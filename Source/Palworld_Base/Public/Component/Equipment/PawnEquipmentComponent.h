@@ -16,6 +16,7 @@ enum class EToggleDamageType : uint8
 };
 
 class AEquipmentBase;
+class AWeaponBase;
 /**
  * 
  */
@@ -67,7 +68,7 @@ public:
 
 
     UPROPERTY(BlueprintReadWrite, Category = "Player")
-    AEquipmentBase* CurrentWeapon;
+    AWeaponBase* CurrentWeapon;
 
 
 protected:
