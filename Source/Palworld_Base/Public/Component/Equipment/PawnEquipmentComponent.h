@@ -61,6 +61,11 @@ public:
     UPROPERTY(BlueprintReadWrite, Category = "Player")
     AEquipmentBase* SpawnedEquipment;
 
+    //스폰한 장비
+    UPROPERTY(BlueprintReadWrite, Category = "Player")
+    AActor* SpawnedActor;
+
+
     UFUNCTION(BlueprintCallable, Category = "Player")
     void SetSpawnedEquipment(AEquipmentBase* _SpawnedEquipment);
 
