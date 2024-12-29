@@ -46,4 +46,8 @@ public:
 	void SetbCancelInputReleased(bool _bCancelInputReleased);
 
 
+	UFUNCTION(BlueprintCallable, Category = "Ability")
+	void GrantAbility(TSubclassOf<UPlayerGameplayAbility> AbilityToGrant, int32 Level, FGameplayAbilitySpecHandle& OutGrantedAbilitySpecHandles);
+
+
 };

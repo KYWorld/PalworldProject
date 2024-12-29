@@ -4,7 +4,7 @@
 #include "AbilitySystem/BaseAbilitySystemComponent.h"
 #include "AbilitySystem/Ability/PlayerGameplayAbility.h"
 #include "BaseLibrary/BaseStructType.h"
-
+#include "GameplayAbilitySpec.h"
 
 void UBaseAbilitySystemComponent::OnAbilityInputPressed(const FGameplayTag& InputTag)
 {
@@ -118,4 +118,13 @@ void UBaseAbilitySystemComponent::TryCancelAbilityByTag(FGameplayTag Tag)
 void UBaseAbilitySystemComponent::SetbCancelInputReleased(bool _bCancelInputReleased)
 {
     bCancelInputReleased = _bCancelInputReleased;
+}
+
+void UBaseAbilitySystemComponent::GrantAbility(TSubclassOf<UPlayerGameplayAbility> AbilityToGrant, int32 Level, FGameplayAbilitySpecHandle& OutGrantedAbilitySpecHandles)
+{
+    //        FGameplayAbilitySpec Spec(WeaponAbilitySet.AbilityToGrant);
+    FGameplayAbilitySpec Spec(AbilityToGrant);
+    Spec.SourceObject = GetAvatarActor();
+    Spec.Level = Level;
+    OutGrantedAbilitySpecHandles = GiveAbility(Spec);
 }
