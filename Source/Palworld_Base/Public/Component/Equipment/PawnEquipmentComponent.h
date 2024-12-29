@@ -83,6 +83,11 @@ public:
     //UFUNCTION(BlueprintCallable, Category = "Ability")
     //void GrantAbility(TSubclassOf<UPlayerGameplayAbility> AbilityToGrant, int32 Level, FGameplayAbilitySpecHandle& OutGrantedAbilitySpecHandles);
 
+    UPROPERTY(BlueprintReadWrite, Category = "Player")
+    TSubclassOf<UPlayerGameplayAbility> CachedGA;
+
+    UPROPERTY(BlueprintReadWrite, Category = "Player")
+    FGameplayAbilitySpecHandle CachedSpecHandle;
 
 protected:
     TArray<AActor*> OverlappedActors;
