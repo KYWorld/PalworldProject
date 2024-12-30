@@ -89,6 +89,10 @@ public:
     UPROPERTY(BlueprintReadWrite, Category = "Player")
     FGameplayAbilitySpecHandle CachedSpecHandle;
 
+
+    UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Ability", meta = (AllowPrivateAccess = "true"))
+    TArray<FGameplayAbilitySpecHandle> GliderSpecHandles;
+
 protected:
     TArray<AActor*> OverlappedActors;
 
