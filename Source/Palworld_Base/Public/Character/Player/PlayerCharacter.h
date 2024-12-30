@@ -103,6 +103,9 @@ public:
 	//UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Movement", meta = (AllowPrivateAccess = "true"))
 	//bool bIsAiming;
 
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Movement")
+	void SetCompass();
+
 	UFUNCTION(BlueprintCallable, Category = "Movement")
 	void SetPlayerRotateToMovement(bool Value);
 

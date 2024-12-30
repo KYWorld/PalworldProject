@@ -167,6 +167,8 @@ void APlayerCharacter::Input_Look(const FInputActionValue& InputActionValue)
 	{
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
+
+	SetCompass();
 }
 
 void APlayerCharacter::Input_AbilityInputPressed(FGameplayTag InputTag)
@@ -198,6 +200,11 @@ void APlayerCharacter::PossessedBy(AController* NewController)
 			LoadedData->GiveToAbilitySystemComponent(GetBaseAbilitySystemComponent());
 		}
 	}
+}
+
+
+void APlayerCharacter::SetCompass_Implementation()
+{
 }
 
 void APlayerCharacter::SetPlayerRotateToMovement(bool Value)
