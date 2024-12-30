@@ -148,6 +148,7 @@ public:
 	APalCharacterBase* CurrentPalCharacter;
 
 
-
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Movement", meta = (AllowPrivateAccess = "true"))
+	bool bIsOverWeight;
 
 };
