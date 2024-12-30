@@ -86,7 +86,7 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_CoolTime_ShootingBow, "Player.Event.CoolTime.ShootingBow");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_CoolTime_Gliding, "Player.Event.CoolTime.Gliding");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_PalSpawn, "Player.Event.PalSpawn");
-
+	UE_DEFINE_GAMEPLAY_TAG(Player_Event_StaminaEmpty, "Player.Event.StaminaEmpty");
 	UE_DEFINE_GAMEPLAY_TAG(Shared_Event_HitReact, "Shared.Event.HitReact");
 
 

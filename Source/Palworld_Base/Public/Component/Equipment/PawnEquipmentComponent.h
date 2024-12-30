@@ -27,23 +27,23 @@ class PALWORLD_BASE_API UPawnEquipmentComponent : public UPawnExtensionComponent
     GENERATED_BODY()
 
 public:
-   //»ý¼ºµÈ ¹«±â µî·Ï
+   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
    UFUNCTION(BlueprintCallable, Category = "Player")
    void RegisterSpawnedEquipment(FGameplayTag EquipmentTag, AEquipmentBase* Equipment, bool bRegisterAsEquippedEquipment = false);
 
-   //Ä³¸¯ÅÍ°¡ ÈÞ´ëÇÏ´Â ¹«±â
+   //Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Þ´ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
    UFUNCTION(BlueprintCallable, Category = "Player")
    AEquipmentBase* GetCharacterCarriedEquipmentByTag(FGameplayTag EquipmentTag) const;
 
-    //Ä³¸¯ÅÍ°¡ ¼ÒÀ¯ÇÑ ¹«±âÀÇ ÅÂ±×
+    //Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â±ï¿½
     UPROPERTY(BlueprintReadWrite, Category = "Player")
     FGameplayTag CurrentEquippedEquipmentTag;
 
-    //Ä³¸¯ÅÍ°¡ ÀåÂøÇÑ ¹«±â
+    //Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     UFUNCTION(BlueprintCallable, Category = "Player")
     AEquipmentBase* GetCharacterCurrentEquippedEquipment() const;
 
-    //Ä³¸¯ÅÍ°¡ ÀåÂøÇÑ ¹«±â
+    //Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     UFUNCTION(BlueprintCallable, Category = "Equipment")
     void ToggleEquipmentCollsion(bool bUse, EToggleDamageType ToggleDamageType = EToggleDamageType::CurrentEquippedEquipment);
 
@@ -51,17 +51,17 @@ public:
     virtual void OnHitTargetActor(AActor* HitActor);
     virtual void OnEquipmentPulledFromTargetActor(AActor* InterectedActor);
 
-    //Ä³¸¯ÅÍ°¡ Åõ»çÃ¼¸¦ ´øÁö±â Àü ¹«±âÀÇ ÅÂ±×
+    //Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â±ï¿½
     UPROPERTY(BlueprintReadWrite, Category = "Player")
     FGameplayTag CurrentCachedEquippedEquipmentTag;
     UFUNCTION(BlueprintCallable, Category = "Player")
     void SetCachedEquippedEquipmentTag(FGameplayTag CachedTag);
 
-    //½ºÆùÇÑ Àåºñ
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     UPROPERTY(BlueprintReadWrite, Category = "Player")
     AEquipmentBase* SpawnedEquipment;
 
-    //½ºÆùÇÑ Àåºñ
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     UPROPERTY(BlueprintReadWrite, Category = "Player")
     AActor* SpawnedActor;
 
@@ -80,11 +80,24 @@ public:
     UFUNCTION(BlueprintCallable, Category = "Player")
     void AbleActor(AActor* Actor);
 
+    //UFUNCTION(BlueprintCallable, Category = "Ability")
+    //void GrantAbility(TSubclassOf<UPlayerGameplayAbility> AbilityToGrant, int32 Level, FGameplayAbilitySpecHandle& OutGrantedAbilitySpecHandles);
+
+    UPROPERTY(BlueprintReadWrite, Category = "Player")
+    TSubclassOf<UPlayerGameplayAbility> CachedGA;
+
+    UPROPERTY(BlueprintReadWrite, Category = "Player")
+    FGameplayAbilitySpecHandle CachedSpecHandle;
+
+
+    UPROPERTY(VisibleAnyWhere, BlueprintReadWrite, category = "Ability", meta = (AllowPrivateAccess = "true"))
+    TArray<FGameplayAbilitySpecHandle> GliderSpecHandles;
+
 protected:
     TArray<AActor*> OverlappedActors;
 
 private:
-    //Ä³¸¯ÅÍ´Â ¿©·¯ Àåºñ¸¦ ¼ÒÀ¯ÇÒ ¼ö ÀÖ´Ù.
+    //Ä³ï¿½ï¿½ï¿½Í´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
     TMap<FGameplayTag, AEquipmentBase*> CharacterCarriedEquipmentMap;
 	
 };

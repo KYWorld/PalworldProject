@@ -17,7 +17,7 @@ struct FPlayerAbilitySet
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Categories = "InputTag"))
     FGameplayTag InputTag;
 
-    //ºÎ¿©°¡´ÉÇÑ ´É·Â
+    //ï¿½Î¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½É·ï¿½
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
     TSubclassOf<UPlayerGameplayAbility> AbilityToGrant;
 
