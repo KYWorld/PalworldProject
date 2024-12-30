@@ -21,11 +21,4 @@ class PALWORLD_BASE_API UBaseAttributeSet : public UAttributeSet
 {
 	GENERATED_BODY()
 	
-public:
-	UBaseAttributeSet();
-
-
-	UPROPERTY(BlueprintReadOnly, Category = "Status")
-	FGameplayAttributeData Stamina;
-	ATTRIBUTE_ACCESSORS(UBaseAttributeSet, Stamina)
 };
