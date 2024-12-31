@@ -45,19 +45,18 @@ ABaseAIController::ABaseAIController(const FObjectInitializer& ObjectInitializer
 	//AIPerceptionComponent->ConfigureSense(*AISenseConfig_Sight);
 	//AIPerceptionComponent->SetDominantSense(UAISenseConfig_Sight::StaticClass());
 
-	SetTeamId(FGenericTeamId(0));
+	SetTeamId(FGenericTeamId(255));
 }
 
 ETeamAttitude::Type ABaseAIController::GetTeamAttitudeTowards(const AActor& Other) const
 {
 	const APawn* PawnCheck = Cast<const APawn>(&Other);
 	const IGenericTeamAgentInterface* OtherTeamAgent = Cast<IGenericTeamAgentInterface>(PawnCheck->GetController());
-	
+
 	//EQS Test Pawn을 제외하고 Hero캐릭터만 체크하기위한 조건
 	if (OtherTeamAgent && OtherTeamAgent->GetGenericTeamId() != GetGenericTeamId())
 	{
 		// 팀아이디가 다르면 적으로 변경
-
 		return ETeamAttitude::Hostile;
 	}
 
