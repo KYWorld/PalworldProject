@@ -63,15 +63,13 @@ float UBaseFunctionLibrary::DamageCulculation(float BasicDamage, float WeaponDam
 	return RoundedResult;
 }
 
-float UBaseFunctionLibrary::DefenseCulculation(float ResultDamage, float Defense, float CurrentHp)
+float UBaseFunctionLibrary::DefenseCulculation(float ResultDamage, float Defense, float CurrentHp, float& OutResultDamage)
 {
 	float Result = ResultDamage - Defense;
-
 	Result = FMath::Clamp(Result, 1, ResultDamage);
-
 	float DamagedHp = CurrentHp - Result;
 
+	OutResultDamage = Result;
 	DamagedHp = FMath::Clamp(DamagedHp, 0, CurrentHp);
-	
 	return DamagedHp;
 }
