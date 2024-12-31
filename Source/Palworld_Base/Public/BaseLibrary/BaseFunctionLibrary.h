@@ -46,5 +46,5 @@ public:
 	static float DamageCulculation(float BasicDamage, float WeaponDamage);
 
 	UFUNCTION(BlueprintPure, Category = "FuntionLibary")
-	static float DefenseCulculation(float ResultDamage, float Defense, float CurrentHp);
+	static float DefenseCulculation(float ResultDamage, float Defense, float CurrentHp, float& OutResultDamage);
 };
