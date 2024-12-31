@@ -45,23 +45,56 @@ ABaseAIController::ABaseAIController(const FObjectInitializer& ObjectInitializer
 	//AIPerceptionComponent->ConfigureSense(*AISenseConfig_Sight);
 	//AIPerceptionComponent->SetDominantSense(UAISenseConfig_Sight::StaticClass());
 
-	SetTeamId(FGenericTeamId(255));
+	SetGenericTeamId(FGenericTeamId(255));
 }
 
 ETeamAttitude::Type ABaseAIController::GetTeamAttitudeTowards(const AActor& Other) const
 {
 	const APawn* PawnCheck = Cast<const APawn>(&Other);
 	const IGenericTeamAgentInterface* OtherTeamAgent = Cast<IGenericTeamAgentInterface>(PawnCheck->GetController());
-
-	//EQS Test Pawn을 제외하고 Hero캐릭터만 체크하기위한 조건
-	if (OtherTeamAgent && OtherTeamAgent->GetGenericTeamId() != GetGenericTeamId())
+	
+	if (GetGenericTeamId() == FGenericTeamId(255))
 	{
-		// 팀아이디가 다르면 적으로 변경
-		return ETeamAttitude::Hostile;
+		return ETeamAttitude::Neutral;
 	}
 
-	// 팀아이디가 같다면 아군으로
-	return ETeamAttitude::Friendly;		
+	if (OtherTeamAgent)
+	{
+		FGenericTeamId OtherTeamId = OtherTeamAgent->GetGenericTeamId();
+
+
+		Debug::Print(TEXT("My"), GetGenericTeamId());
+		Debug::Print(TEXT("Other"), OtherTeamId);
+
+		if (OtherTeamId == GetGenericTeamId())
+		{
+			return ETeamAttitude::Friendly; // 같은 팀이면 우호적
+		}
+		else if (OtherTeamId == FGenericTeamId(255)) // ID = 255이면 중립
+		{
+			return ETeamAttitude::Neutral;
+		}
+		else
+		{
+			return ETeamAttitude::Hostile; // 나머지는 적대적
+		}
+	}
+	return ETeamAttitude::Neutral; // 기본값은 중립
+
+	////EQS Test Pawn을 제외하고 Hero캐릭터만 체크하기위한 조건
+	//if (OtherTeamAgent && OtherTeamAgent->GetGenericTeamId() != GetGenericTeamId())
+	//{
+	//	// 팀아이디가 다르면 적으로 변경
+	//	return ETeamAttitude::Hostile;
+	//}
+
+	//// 팀아이디가 같다면 아군으로
+	//if (OtherTeamAgent && OtherTeamAgent->GetGenericTeamId() == GetGenericTeamId())
+	//{
+	//	return ETeamAttitude::Friendly;
+	//}	
+
+	//return ETeamAttitude::Neutral;
 }
 
 void ABaseAIController::BeginPlay()
