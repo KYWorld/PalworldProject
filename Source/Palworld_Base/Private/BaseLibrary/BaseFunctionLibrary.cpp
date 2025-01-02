@@ -52,20 +52,22 @@ UPawnEquipmentComponent* UBaseFunctionLibrary::BP_GetUPawnEquipmentComponentFrom
 	return nullptr;
 }
 
-float UBaseFunctionLibrary::DamageCulculation(float BasicDamage, float WeaponDamage)
+float UBaseFunctionLibrary::DamageCulculation(float BasicDamage, float Attack)
 {
 	float MinValue = 0.0f;  // 최소값
 	float MaxValue = 10.0f; // 최대값
 	float RandomFloat = FMath::RandRange(MinValue, MaxValue);
 
-	float Result = BasicDamage + WeaponDamage + RandomFloat;
+	float Result = BasicDamage * (1 + Attack / 100) + RandomFloat;
+
 	float RoundedResult = FMath::RoundToFloat(Result);
 	return RoundedResult;
 }
 
 float UBaseFunctionLibrary::DefenseCulculation(float ResultDamage, float Defense, float CurrentHp, float& OutResultDamage)
 {
-	float Result = ResultDamage - Defense;
+	float Result = ResultDamage * (1 - Defense / (Defense + 100));
+	
 	Result = FMath::Clamp(Result, 1, ResultDamage);
 	float DamagedHp = CurrentHp - Result;
 
