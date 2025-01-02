@@ -97,7 +97,7 @@ APlayerCharacter::APlayerCharacter()
 
     // 페이퍼 스프라이트 장착
     PlayerIndicatorSprite = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("PlayerIndicatorSprite"));
-    PlayerIndicatorSprite->SetupAttachment(GetMesh());
+    PlayerIndicatorSprite->SetupAttachment(GetRootComponent());
 
 
 	//�ɸ��Ϳ����� �ʱ⼼��
