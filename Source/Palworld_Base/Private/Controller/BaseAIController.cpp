@@ -62,6 +62,9 @@ ETeamAttitude::Type ABaseAIController::GetTeamAttitudeTowards(const AActor& Othe
 	{
 		FGenericTeamId OtherTeamId = OtherTeamAgent->GetGenericTeamId();
 
+		Debug::Print(TEXT("My "), GetGenericTeamId());
+		Debug::Print(TEXT("Other "), OtherTeamId);
+
 		if (OtherTeamId == GetGenericTeamId())
 		{
 			return ETeamAttitude::Friendly; // 같은 팀이면 우호적
