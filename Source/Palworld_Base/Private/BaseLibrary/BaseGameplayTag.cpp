@@ -100,4 +100,7 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(Pal_Event_Tracking, "Pal.Event.Tracking");
 	UE_DEFINE_GAMEPLAY_TAG(Pal_Event_Encount, "Pal.Event.Encount");
 	UE_DEFINE_GAMEPLAY_TAG(Pal_Event_Death, "Pal.Event.Death");
+	UE_DEFINE_GAMEPLAY_TAG(Pal_Event_Rest, "Pal.Event.Rest");
+	UE_DEFINE_GAMEPLAY_TAG(Pal_Event_Sleep, "Pal.Event.Sleep");
+	UE_DEFINE_GAMEPLAY_TAG(Pal_Event_Awake, "Pal.Event.Awake");
 }
