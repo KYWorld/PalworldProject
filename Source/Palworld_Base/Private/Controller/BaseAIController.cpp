@@ -53,11 +53,6 @@ ETeamAttitude::Type ABaseAIController::GetTeamAttitudeTowards(const AActor& Othe
 	const APawn* PawnCheck = Cast<const APawn>(&Other);
 	const IGenericTeamAgentInterface* OtherTeamAgent = Cast<IGenericTeamAgentInterface>(PawnCheck->GetController());
 	
-	if (GetGenericTeamId() == FGenericTeamId(255))
-	{
-		return ETeamAttitude::Neutral;
-	}
-
 	if (OtherTeamAgent)
 	{
 		FGenericTeamId OtherTeamId = OtherTeamAgent->GetGenericTeamId();
