@@ -139,6 +139,8 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Ammo", meta = (AllowPrivateAccess = "true"))
 	int32 CurrentMag;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Ammo", meta = (AllowPrivateAccess = "true"))
+	int32 MaxMag;
 
 	//UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, category = "Input", meta = (AllowPrivateAccess = "true"))
 	//UInputAction* FlyMoveAction;
