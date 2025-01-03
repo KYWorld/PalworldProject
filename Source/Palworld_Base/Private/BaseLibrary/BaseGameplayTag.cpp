@@ -80,7 +80,7 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(Player_Weapon_PalSphere, "Player.Weapon.PalSphere");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Weapon_Bow, "Player.Weapon.Bow");
 
-
+	UE_DEFINE_GAMEPLAY_TAG(Player_Event_ShootingTime, "Player.Event.ShootingTime");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Death, "Player.Event.Death");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Equipment_Throw, "Player.Event.Equipment.Throw");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_CoolTime_ShootingBow, "Player.Event.CoolTime.ShootingBow");
@@ -91,7 +91,7 @@ namespace BaseGamePlayTag
 	UE_DEFINE_GAMEPLAY_TAG(Shared_Event_HitReact, "Shared.Event.HitReact");
 
 
-
+	//	PALWORLD_BASE_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(Player_Event_ShootingTime);
 
 	//Pal Tags
 	UE_DEFINE_GAMEPLAY_TAG(Pal_Ability_Attack, "Pal.Ability.Attack");
