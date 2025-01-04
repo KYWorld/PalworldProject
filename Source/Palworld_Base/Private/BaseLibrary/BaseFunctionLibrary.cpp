@@ -69,12 +69,13 @@ float UBaseFunctionLibrary::DefenseCulculation(float ResultDamage, float Defense
 	float Result = ResultDamage * (1 - Defense / (Defense + 100));
 	
 	Result = FMath::Clamp(Result, 1, ResultDamage);
-	float DamagedHp = CurrentHp - Result;
+	Result = FMath::RoundToFloat(Result);
 
 	OutResultDamage = Result;
+
+	float DamagedHp = CurrentHp - Result;
 	DamagedHp = FMath::Clamp(DamagedHp, 0, CurrentHp);
 
 	float RoundedDamagedHp = FMath::RoundToFloat(DamagedHp);
-	OutResultDamage = RoundedDamagedHp;
 	return RoundedDamagedHp;
 }
