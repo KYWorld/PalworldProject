@@ -30,13 +30,13 @@ struct FArmorStatus
     GENERATED_BODY()
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Categories = "Status"))
-    float Defence;
+    float Defence = 0.0f;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Categories = "Status"))
-    float Hp;
+    float Hp = 0.0f;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Categories = "Status"))
-    float Durability;
+    float Durability = 0.0f;
 };
 
 USTRUCT(BlueprintType)
@@ -45,10 +45,10 @@ struct FWeaponStatus
     GENERATED_BODY()
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Categories = "Status"))
-    float Attack;
+    float Attack = 0.0f;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (Categories = "Status"))
-    float Durability;
+    float Durability = 0.0f;
 };
 
 USTRUCT(BlueprintType)
@@ -70,10 +70,10 @@ struct FPlayerWeaponData
     TSubclassOf<UPlayerAnimInstance> WeaponAnimLayerToLink;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-    UAnimMontage* EquipAnimMontage;
+    UAnimMontage* EquipAnimMontage = nullptr;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-    UInputMappingContext* WeaponInputMappingContext;
+    UInputMappingContext* WeaponInputMappingContext = nullptr;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (TitleProperty = "InputTag"))
     TArray<FPlayerAbilitySet> WeaponAbilities;
