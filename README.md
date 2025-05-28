@@ -37,11 +37,18 @@
 
 ---
 
-## 🖼 Screenshots
+## 🖥️ 게임 결과 화면
 
-![Screenshot 1](./assets/screenshot1.png)
-![Screenshot 2](./assets/screenshot2.png)
-> 위 스크린샷은 게임 내 실제 플레이 장면입니다. (썸네일, 전투, 제작 등 원하는 이미지로 교체하세요.)
+| 인벤토리 | 활공 |
+|-------------|--------------|
+| ![언리얼엔진5 Palworld 모작 mp4_20250507_023241](https://github.com/user-attachments/assets/8897f64d-93d3-4194-8e84-b13ebf1d2dcf) | ![언리얼엔진5 Palworld 모작 mp4_20250507_021822](https://github.com/user-attachments/assets/de87045e-628e-4fe2-ab76-6811a89e47ab) |
+
+| 전투 | AI |
+|-------------|--------------|
+| ![언리얼엔진5 Palworld 모작 mp4_20250507_021746](https://github.com/user-attachments/assets/889fe63a-b51f-4aa2-ae07-1b349a11cda5) | ![언리얼엔진5 Palworld 모작 mp4_20250507_022500](https://github.com/user-attachments/assets/e69e30fc-b645-4fb5-84dd-29b2b2ac5acf) |
+
+
+> 위 스크린샷은 게임 내 실제 플레이 장면입니다.
 
 ---
 
